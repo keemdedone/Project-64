@@ -13,7 +13,6 @@
         <a href="{{ route('homepage') }}">Homepage</a>
         <a href="{{ route('game') }}">Game</a>
         <a href="{{ route('manga') }}">Manga</a>
-        <a href="">TEST</a>
     </header>
     <main>@yield('content')</main>
     <footer>
