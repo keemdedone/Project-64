@@ -10,6 +10,6 @@
         </label>
     </form>
     <table>
-    <tr><td></td></tr> 
+    <tr><td>OK</td></tr> 
     </table>
 @endsection
