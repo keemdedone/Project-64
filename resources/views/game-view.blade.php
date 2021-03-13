@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
-@extend('title',$title)
+@section('title',$title)
 
 @section('content')
+
 @endsection

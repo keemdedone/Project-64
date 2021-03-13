@@ -14,15 +14,22 @@ class GameController extends Controller
         foreach(preg_split('/\s+/',$term) as $word) {
             $query->where(function($ininerQuery) use ($word) {
                 return $ininerQuery
-                ->where('id','LIKE',"%{$word}%")
-                ->orwhere('name','LIKE',"%{$word}%")
+                ->where('name','LIKE',"%{$word}%")
                 ;
             });
         }
         return view('game-list', [
-            'title' => "{$this->title} : List", 
+            'title' => "All {$this->title} List", 
             'term' => $term,
-            'game' => $query->paginate(2),
+            'games' => $query->paginate(2),
+        ]);
+    }
+
+    function show($gameName) {
+        $game = Game::where('name', $gameName)->firstOrFail(); 
+        return view('game-view', [
+        'title' => "{$this->title} : View",
+        'game' => $game,
         ]);
     }
 }
