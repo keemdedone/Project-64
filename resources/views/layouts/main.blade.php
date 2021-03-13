@@ -16,7 +16,7 @@
     </header>
     <main>@yield('content')</main>
     <footer>
-        <p class="copyright"> &#xA9; Copyright Project, 2021 Komchan's Databases. </p>
+        <p class="copyright"> &#xA9; Copyright Project,2022 Komchan-Phominan Project. </p>
     </footer>
 </body>
 </html>
