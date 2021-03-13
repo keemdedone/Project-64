@@ -14,15 +14,15 @@ class GameController extends Controller
         foreach(preg_split('/\s+/',$term) as $word) {
             $query->where(function($ininerQuery) use ($word) {
                 return $ininerQuery
-                ->where('code','LIKE',"%{$word}%")
+                ->where('id','LIKE',"%{$word}%")
                 ->orwhere('name','LIKE',"%{$word}%")
                 ;
             });
         }
-        return view('product-list', [
+        return view('game-list', [
             'title' => "{$this->title} : List", 
             'term' => $term,
-            'products' => $query->paginate(2),
+            'game' => $query->paginate(2),
         ]);
     }
 }
