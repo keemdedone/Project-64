@@ -20,7 +20,7 @@ class CreateGamesTable extends Migration
      REFRESH DATA -> php artisan migrate:refresh
      */
     {
-        Schema::create('game', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('name',200);
             $table->string('type',50);

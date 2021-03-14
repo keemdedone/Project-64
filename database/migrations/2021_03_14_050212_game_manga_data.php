@@ -14,7 +14,7 @@ class GameMangaData extends Migration
      */
     public function up()
     {
-        DB::table('game')->insert(
+        DB::table('games')->insert(
             array(
                 'id' => '1',
                 'name' => 'Dark Soul 3',
@@ -23,13 +23,31 @@ class GameMangaData extends Migration
                 'point' => '10'
             )
         );
+        DB::table('games')->insert(
+            array(
+                'id' => '2',
+                'name' => 'CSGO',
+                'type' => 'FPS',
+                'description' => 'classic shooting game',
+                'point' => '10'
+            )
+        );
 
-        DB::table('manga')->insert(
+        DB::table('mangas')->insert(
             array(
                 'id' => '1',
                 'name' => 'No Game No Life',
                 'type' => 'fantasy',
                 'description' => 'good idea manga',
+                'point' => '10'
+            )
+        );
+        DB::table('mangas')->insert(
+            array(
+                'id' => '2',
+                'name' => 'Goblin Slayer',
+                'type' => 'fantasy',
+                'description' => 'blood stike',
                 'point' => '10'
             )
         );

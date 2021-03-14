@@ -27,3 +27,4 @@ Route::get('/game', [GameController::class,'list'])->name('game-list');
 Route::get('/game/{game}', [GameController::class,'show'])->name('game-view');
 
 Route::get('/manga', [MangaController::class,'list'])->name('manga-list');
+Route::get('/manga/{manga}', [MangaController::class,'show'])->name('manga-view');

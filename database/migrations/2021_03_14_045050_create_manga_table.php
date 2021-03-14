@@ -13,7 +13,7 @@ class CreateMangaTable extends Migration
      */
     public function up()
     {
-        Schema::create('manga', function (Blueprint $table) {
+        Schema::create('mangas', function (Blueprint $table) {
             $table->id();
             $table->string('name',50); 
             $table->string('type',50);
