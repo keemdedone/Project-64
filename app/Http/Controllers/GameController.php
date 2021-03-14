@@ -21,7 +21,7 @@ class GameController extends Controller
         return view('game-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'games' => $query->paginate(2),
+            'games' => $query->paginate(4),
         ]);
     }
 
@@ -35,7 +35,7 @@ class GameController extends Controller
 
     function createForm() {
         return view('game-create', [
-        'title' => "{$this->title} Review Create",
+        'title' => "{$this->title} Review Create Form",
         ]);
     }
 

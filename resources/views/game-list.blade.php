@@ -12,16 +12,19 @@
 @endsection
 @section('content')
     <table border="1">
-        @foreach ($games as $game)
         <tr>
-            <td>
-                <a href="{{ route('game-view', ['game' => $game->name]) }}">
-                    <img src="{{ asset("images/game/{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 250px;" /><br/>
-                    <h3>{{$game->name}}</h3>
-                </a>
-            </td>
-        </tr>
+        @foreach ($games as $game)
+            @if ( ($game->id)/3 == 1)
+                <tr></tr>
+            @endif
+                <td>
+                    <a href="{{ route('game-view', ['game' => $game->name]) }}">
+                        <img src="{{ asset("images/game/{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 250px;" /><br/>
+                        <h3>{{$game->name}}</h3>
+                    </a>
+                </td>
         @endforeach 
+        </tr>
     </table>
     <form action="{{ route('game-list') }}">{{ $games->withQueryString()->links() }}</form>
 @endsection

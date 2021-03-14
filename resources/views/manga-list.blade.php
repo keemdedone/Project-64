@@ -12,16 +12,16 @@
 @endsection
 @section('content')
     <table border="1">
-        @foreach ($mangas as $manga)
         <tr>
+        @foreach ($mangas as $manga)
             <td>
                 <a href="{{ route('manga-view', ['manga' => $manga->name]) }}">
                     <img src="{{ asset("images/manga/{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 250px;" /><br/>
                     <h3>{{$manga->name}}</h3>
                 </a>
             </td>
-        </tr>
         @endforeach 
+        </tr>
     </table>
     <form action="{{ route('manga-list') }}">{{ $mangas->withQueryString()->links() }}</form>
 @endsection

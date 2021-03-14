@@ -13,11 +13,10 @@ class CreateGamesTable extends Migration
      */
     public function up()
     /*
-     RUN by type "php artisan migrate" on terminal 
-     ADD colum by type "php artisan make:migration add_(colum name)_to_(table name)_table" this will display- 
-     -add migration that you can insert colum
-     ROLLBACK -> "php artisan migrate:rollback"
+     RUN -> php artisan migrate on terminal 
+     ROLLBACK -> php artisan migrate:rollback
      REFRESH DATA -> php artisan migrate:refresh
+     Last data update ->php artisan migrate:refresh
      */
     {
         Schema::create('games', function (Blueprint $table) {

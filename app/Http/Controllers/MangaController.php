@@ -21,7 +21,7 @@ class MangaController extends Controller
         return view('manga-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'mangas' => $query->paginate(2),
+            'mangas' => $query->paginate(3),
         ]);
     }
 
@@ -31,5 +31,16 @@ class MangaController extends Controller
         'title' => "{$this->title} : View",
         'manga' => $manga,
         ]);
+    }
+    function createForm() {
+        return view('manga-create', [
+        'title' => "{$this->title} Review Create Form",
+        ]);
+    }
+
+    function create(Request $request) {
+        $manga = Manga::create($request->getParsedBody());
+        return redirect()->route('manga-list')
+        ;
     }
 }

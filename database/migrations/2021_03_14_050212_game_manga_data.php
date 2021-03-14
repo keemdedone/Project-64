@@ -23,12 +23,33 @@ class GameMangaData extends Migration
                 'point' => '10'
             )
         );
+
         DB::table('games')->insert(
             array(
                 'id' => '2',
                 'name' => 'CSGO',
                 'type' => 'FPS',
                 'description' => 'classic shooting game',
+                'point' => '10'
+            )
+        );
+
+        DB::table('games')->insert(
+            array(
+                'id' => '3',
+                'name' => 'BDO',
+                'type' => 'MMORPG',
+                'description' => 'Good Game....',
+                'point' => '10'
+            )
+        );
+
+        DB::table('games')->insert(
+            array(
+                'id' => '4',
+                'name' => 'Genshin',
+                'type' => 'MMORPG',
+                'description' => 'Salt game',
                 'point' => '10'
             )
         );
@@ -42,12 +63,33 @@ class GameMangaData extends Migration
                 'point' => '10'
             )
         );
+
         DB::table('mangas')->insert(
             array(
                 'id' => '2',
                 'name' => 'Goblin Slayer',
                 'type' => 'fantasy',
                 'description' => 'blood stike',
+                'point' => '10'
+            )
+        );
+
+        DB::table('mangas')->insert(
+            array(
+                'id' => '3',
+                'name' => 'Kimisuno Yaiba',
+                'type' => 'demon',
+                'description' => 'demon vs demon-slayer',
+                'point' => '10'
+            )
+        );
+
+        DB::table('mangas')->insert(
+            array(
+                'id' => '4',
+                'name' => 'Call her GOD, Susumiya Haruhi',
+                'type' => 'school life',
+                'description' => 'day of SS HQ',
                 'point' => '10'
             )
         );
