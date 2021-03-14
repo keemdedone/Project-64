@@ -25,8 +25,8 @@ class GameController extends Controller
         ]);
     }
 
-    function show($gameName) {
-        $game = Game::where('name', $gameName)->firstOrFail(); 
+    function show($gameId) {
+        $game = Game::where('id', $gameId)->firstOrFail(); 
         return view('game-view', [
         'title' => "{$this->title} : View",
         'game' => $game,
@@ -43,5 +43,22 @@ class GameController extends Controller
         $game = Game::create($request->getParsedBody());
         return redirect()->route('game-list')
         ;
+    }
+
+    function updateForm($gameId) {
+        $game = Game::where('id',$gameId)->FirstOrFail();
+        return view('game-update', [
+        'title' => "{$this->title} : Update",
+        'game' => $game,
+        ]);
+    }
+
+    function update(Request $request, $gameId) {
+        $game = Game::where('id',$gameId)->FirstOrFail();
+        $game->fill($request->getParsedBody());
+        $game->save();
+        return redirect()->route('game-view',[
+            'game' => $game->id,
+        ]);
     }
 }

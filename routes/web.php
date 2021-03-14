@@ -29,6 +29,8 @@ Route::get('/game', [GameController::class,'list'])->name('game-list');
 Route::get('/game/create', [GameController::class, 'createForm'])->name('game-create-form'); 
 Route::post('/game/create', [GameController::class, 'create'])->name('game-create');
 Route::get('/game/{game}', [GameController::class,'show'])->name('game-view');
+Route::get('/game/{game}/update', [GameController::class, 'updateForm'])->name('game-update-form');
+Route::post('/game/{game}/update', [GameController::class, 'update'])->name('game-update');
 
 
 Route::get('/manga', [MangaController::class,'list'])->name('manga-list');
