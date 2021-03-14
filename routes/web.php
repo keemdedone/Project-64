@@ -18,13 +18,20 @@ use App\Http\Controllers\MangaController;
 Route::get('/', function () {
     return view('homepage');
 });
-
 Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
+Route::get('/homepage/create', function () {
+    return view('select-create-review');
+})->name('select-create-review');
 
 Route::get('/game', [GameController::class,'list'])->name('game-list');
+Route::get('/game/create', [GameController::class, 'createForm'])
+->name('game-create-form'); 
+Route::post('/game/create', [GameController::class, 'create'])
+->name('game-create');
 Route::get('/game/{game}', [GameController::class,'show'])->name('game-view');
+
 
 Route::get('/manga', [MangaController::class,'list'])->name('manga-list');
 Route::get('/manga/{manga}', [MangaController::class,'show'])->name('manga-view');

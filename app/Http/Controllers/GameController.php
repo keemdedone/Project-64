@@ -32,4 +32,16 @@ class GameController extends Controller
         'game' => $game,
         ]);
     }
+
+    function createForm() {
+        return view('game-create', [
+        'title' => "{$this->title} Review Create",
+        ]);
+    }
+
+    function create(Request $request) {
+        $game = Game::create($request->getParsedBody());
+        return redirect()->route('game-list')
+        ;
+    }
 }
