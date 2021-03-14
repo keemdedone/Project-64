@@ -61,4 +61,11 @@ class GameController extends Controller
             'game' => $game->id,
         ]);
     }
+
+    function delete($gameId){
+        $game = Game::where('id',$gameId)->FirstOrFail();
+        $game->delete();
+        return redirect()->route('game-list')
+        ;
+    }
 }

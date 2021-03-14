@@ -31,9 +31,12 @@ Route::post('/game/create', [GameController::class, 'create'])->name('game-creat
 Route::get('/game/{game}', [GameController::class,'show'])->name('game-view');
 Route::get('/game/{game}/update', [GameController::class, 'updateForm'])->name('game-update-form');
 Route::post('/game/{game}/update', [GameController::class, 'update'])->name('game-update');
-
+Route::get('/game/{game}/delete', [GameController::class, 'delete'])->name('game-delete');
 
 Route::get('/manga', [MangaController::class,'list'])->name('manga-list');
 Route::get('/manga/create', [MangaController::class, 'createForm'])->name('manga-create-form'); 
 Route::post('/manga/create', [MangaController::class, 'create'])->name('manga-create');
 Route::get('/manga/{manga}', [MangaController::class,'show'])->name('manga-view');
+Route::get('/manga/{manga}/update', [MangaController::class, 'updateForm'])->name('manga-update-form');
+Route::post('/manga/{manga}/update', [MangaController::class, 'update'])->name('manga-update');
+Route::get('/manga/{manga}/delete', [MangaController::class, 'delete'])->name('manga-delete');

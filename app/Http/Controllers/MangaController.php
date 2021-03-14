@@ -43,4 +43,21 @@ class MangaController extends Controller
         return redirect()->route('manga-list')
         ;
     }
+
+    function updateForm($mangaId) {
+        $manga = Manga::where('id',$mangaId)->FirstOrFail();
+        return view('manga-update', [
+        'title' => "{$this->title} : Update",
+        'manga' => $manga,
+        ]);
+    }
+
+    function update(Request $request, $mangaId) {
+        $manga = Manga::where('id',$mangaId)->FirstOrFail();
+        $manga->fill($request->getParsedBody());
+        $manga->save();
+        return redirect()->route('manga-view',[
+            'manga' => $manga->id,
+        ]);
+    }
 }
