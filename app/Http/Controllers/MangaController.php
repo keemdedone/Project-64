@@ -21,7 +21,7 @@ class MangaController extends Controller
         return view('manga-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'mangas' => $query->paginate(3),
+            'mangas' => $query->paginate(4),
         ]);
     }
 
