@@ -59,3 +59,27 @@ nav a:hover {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.button {
+    width: 300px;
+    height: 300px; 
+    text-decoration: none;
+    color: black;
+    background-color: #aaa;
+    opacity: 1;
+    padding: 15px 40px;
+    border-radius: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .glow-button:hover {
+    
+    box-shadow: 0 8px 100px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .bg {
+    background-image: url("https://wallpaperaccess.com/full/869.jpg");
+    background-color: #cccccc;
+   }
