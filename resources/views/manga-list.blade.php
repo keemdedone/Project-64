@@ -14,7 +14,7 @@
     <table border="1">
         <tr>
         @foreach ($mangas as $manga)
-            @if ( ($manga->id)/3 == 1)
+            @if ( ($manga->id)/4 == 1)
                 <tr></tr>
             @endif
             <td>

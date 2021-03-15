@@ -24,4 +24,12 @@ class RecommandController extends Controller
             'recommands' => $query->paginate(4),
         ]);
     }
+
+    function show($recommandId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail(); 
+        return view('recommand-view', [
+        'title' => "{$this->title} : View",
+        'recommand' => $recommand,
+        ]);
+    }
 }

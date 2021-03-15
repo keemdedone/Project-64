@@ -103,6 +103,15 @@ class AddMangasGamesRecommandsToTable extends Migration
                     'description' => 'This is game recommand for you, MMORPG player',
                 )
             );
+
+            DB::table('recommands')->insert(
+                array(
+                    'id' => '2',
+                    'name' => 'Top 10 FPS GAME Recommand!!!',
+                    'review_by' => 'Komchan Thongsen',
+                    'description' => 'This is game recommand for you, FPS player',
+                )
+            );
         });
     }
 

@@ -14,6 +14,7 @@
         <a href="{{ route('homepage') }}">Homepage</a>
         <a href="{{ route('game-list') }}">Game-List</a>
         <a href="{{ route('manga-list') }}">Manga-List</a>
+        <a href="{{ route('recommand-list') }}">Recommend-List</a>
     </header>
     <main>@yield('content')</main>
     <footer>
