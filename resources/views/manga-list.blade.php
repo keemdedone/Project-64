@@ -18,8 +18,8 @@
                 <tr></tr>
             @endif
             <td>
-                <a href="{{ route('manga-view', ['manga' => $manga->name]) }}">
-                    <img src="{{ asset("images/manga/{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 250px;" /><br/>
+                <a href="{{ route('manga-view', ['manga' => $manga->id]) }}">
+                    <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 250px;" /><br/>
                     <h3>{{$manga->name}}</h3>
                 </a>
             </td>
