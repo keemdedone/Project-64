@@ -12,7 +12,7 @@
     </form>
 @endsection
 @section('content')
-    <table border="1"align="center"> 
+    <table border="1" align="center"> 
         <tr>
         @foreach ($games as $game)
             @if ( ($game->id)/4 == 1)

@@ -14,7 +14,7 @@ cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhW
     <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}">
     @yield('search')
 </head>
-<body class=""> 
+<body class="" align="center"> 
     <header>
         <h1>@yield('title')</h1>
         <a href="{{ route('homepage') }}" >Homepage</a>

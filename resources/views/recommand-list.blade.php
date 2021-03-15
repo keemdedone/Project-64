@@ -17,7 +17,7 @@
             @foreach ($recommands as $recommand)
                     <td>
                         <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}">
-                            <img src="{{ asset("images/recommand/{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
+                            <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
                             <h3>{{$recommand->name}}</h3>
                         </a>
                     </td>
