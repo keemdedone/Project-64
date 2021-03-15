@@ -3,6 +3,7 @@
 @section('title',$title)
 
 @section('search')
+<body align="center">
     <form action="{{ route('game-list') }}" method="get">
         <label>
             <b>search</b>
@@ -11,7 +12,7 @@
     </form>
 @endsection
 @section('content')
-    <table border="1">
+    <table border="1"align="center"> 
         <tr>
         @foreach ($games as $game)
             @if ( ($game->id)/4 == 1)
@@ -27,4 +28,5 @@
         </tr>
     </table>
     <form action="{{ route('game-list') }}">{{ $games->withQueryString()->links() }}</form>
+    </body>
 @endsection

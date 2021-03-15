@@ -3,6 +3,7 @@
 @section('title',$title)
 
 @section('search')
+<body align="center">
     <form action="{{ route('recommand-list') }}" method="get">
         <label>
             <b>search</b>
@@ -11,7 +12,7 @@
     </form>
 @endsection
 @section('content')
-    <table border="1">
+    <table border="1" align="center">
         <tr>
             @foreach ($recommands as $recommand)
                     <td>
@@ -24,4 +25,5 @@
         </tr>
     </table>
     <form action="{{ route('recommand-list') }}">{{ $recommands->withQueryString()->links() }}</form>
+    <body>
 @endsection

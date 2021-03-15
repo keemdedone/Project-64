@@ -3,6 +3,8 @@
 @section('title',$title)
 
 @section('search')
+
+<body align="center">
     <form action="{{ route('manga-list') }}" method="get">
         <label>
             <b>search</b>
@@ -11,13 +13,13 @@
     </form>
 @endsection
 @section('content')
-    <table border="1">
-        <tr>
+    <table border="1" align="center" >
+        <tr >
         @foreach ($mangas as $manga)
             @if ( ($manga->id)/4 == 1)
                 <tr></tr>
             @endif
-            <td>
+            <td >
                 <a href="{{ route('manga-view', ['manga' => $manga->id]) }}">
                     <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 250px;" /><br/>
                     <h3>{{$manga->name}}</h3>
@@ -27,4 +29,5 @@
         </tr>
     </table>
     <form action="{{ route('manga-list') }}">{{ $mangas->withQueryString()->links() }}</form>
+    </body>
 @endsection
