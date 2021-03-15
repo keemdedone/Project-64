@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MangaController;
+use App\Http\Controllers\RecommandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,5 @@ Route::get('/manga/{manga}', [MangaController::class,'show'])->name('manga-view'
 Route::get('/manga/{manga}/update', [MangaController::class, 'updateForm'])->name('manga-update-form');
 Route::post('/manga/{manga}/update', [MangaController::class, 'update'])->name('manga-update');
 Route::get('/manga/{manga}/delete', [MangaController::class, 'delete'])->name('manga-delete');
+
+Route::get('/recommand', [RecommandController::class,'list'])->name('recommand-list');

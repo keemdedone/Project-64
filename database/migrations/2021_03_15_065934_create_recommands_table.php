@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGamesTable extends Migration
+class CreateRecommandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,19 +12,12 @@ class CreateGamesTable extends Migration
      * @return void
      */
     public function up()
-    /*
-     RUN -> php artisan migrate on terminal 
-     ROLLBACK -> php artisan migrate:rollback
-     REFRESH DATA -> php artisan migrate:refresh
-     Last data update ->php artisan migrate:fresh
-     */
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('recommands', function (Blueprint $table) {
             $table->id();
-            $table->string('name',200);
-            $table->string('type',50);
+            $table->string('name',50);
+            $table->string('review_by',50);
             $table->string('description',200);
-            $table->integer('point');
             $table->timestamps();
         });
     }
@@ -36,6 +29,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('recommands');
     }
 }
