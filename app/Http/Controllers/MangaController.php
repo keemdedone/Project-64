@@ -16,6 +16,7 @@ class MangaController extends Controller
             $query->where(function($ininerQuery) use ($word) {
                 return $ininerQuery
                 ->where('name','LIKE',"%{$word}%")
+                ->orwhere('type','LIKE',"%{$word}%")
                 ;
             });
         }
