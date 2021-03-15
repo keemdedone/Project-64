@@ -43,3 +43,4 @@ Route::post('/manga/{manga}/update', [MangaController::class, 'update'])->name('
 Route::get('/manga/{manga}/delete', [MangaController::class, 'delete'])->name('manga-delete');
 
 Route::get('/recommand', [RecommandController::class,'list'])->name('recommand-list');
+Route::get('/recommand/{recommand}', [RecommandController::class,'show'])->name('recommand-view');

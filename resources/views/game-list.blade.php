@@ -14,7 +14,7 @@
     <table border="1">
         <tr>
         @foreach ($games as $game)
-            @if ( ($game->id)/3 == 1)
+            @if ( ($game->id)/4 == 1)
                 <tr></tr>
             @endif
                 <td>

@@ -21,7 +21,15 @@ class RecommandController extends Controller
         return view('recommand-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'recommands' => $query->paginate(4),
+            'recommands' => $query->paginate(2),
+        ]);
+    }
+
+    function show($recommandId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail(); 
+        return view('recommand-view', [
+        'title' => "{$this->title} : View",
+        'recommand' => $recommand,
         ]);
     }
 }
