@@ -21,7 +21,7 @@ class RecommandController extends Controller
         return view('recommand-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'recommands' => $query->paginate(4),
+            'recommands' => $query->paginate(2),
         ]);
     }
 

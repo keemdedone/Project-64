@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Models\Manga; 
+use App\Models\Recommand; 
 
 class MangaController extends Controller
 {
@@ -21,7 +22,7 @@ class MangaController extends Controller
         return view('manga-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'mangas' => $query->paginate(4),
+            'mangas' => $query->paginate(3),
         ]);
     }
 

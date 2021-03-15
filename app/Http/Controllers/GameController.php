@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request; 
 use App\Models\Game;
+use App\Models\Recommand; 
 
 class GameController extends Controller
 {
@@ -21,7 +22,7 @@ class GameController extends Controller
         return view('game-list', [
             'title' => "All {$this->title} List", 
             'term' => $term,
-            'games' => $query->paginate(4),
+            'games' => $query->paginate(3),
         ]);
     }
 
