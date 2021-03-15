@@ -26,13 +26,14 @@ class MangaController extends Controller
         ]);
     }
 
-    function show($mangaName) {
-        $manga = manga::where('name', $mangaName)->firstOrFail(); 
+    function show($mangaId) {
+        $manga = Manga::where('id', $mangaId)->firstOrFail(); 
         return view('manga-view', [
         'title' => "{$this->title} : View",
         'manga' => $manga,
         ]);
     }
+
     function createForm() {
         return view('manga-create', [
         'title' => "{$this->title} Review Create Form",
@@ -60,5 +61,12 @@ class MangaController extends Controller
         return redirect()->route('manga-view',[
             'manga' => $manga->id,
         ]);
+    }
+
+    function delete($mangaId){
+        $manga = Manga::where('id',$mangaId)->FirstOrFail();
+        $manga->delete();
+        return redirect()->route('manga-list')
+        ;
     }
 }

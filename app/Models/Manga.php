@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Manga extends Model
 {
-    protected $fillable = ['name','type','description','point'];
+    protected $fillable = ['name','writer','type','description','point'];
+    function recommands() {
+        return $this->belongsTo(Recommands::class);
+    }
 }

@@ -17,6 +17,11 @@
                 <td><input type="text" name="type"></td>
             </tr>
             <tr>
+                <td>Writer </td>
+                <td>:</td>
+                <td><input type="text" name="writer"></td>
+            </tr>
+            <tr>
                 <td>Description </td>
                 <td>:</td>
                 <td><input type="text" name="description"></td>

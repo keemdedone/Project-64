@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Storage;
 use Psr\Http\Message\ServerRequestInterface as Request; 
 use App\Models\Game;
 use App\Models\Recommand; 
