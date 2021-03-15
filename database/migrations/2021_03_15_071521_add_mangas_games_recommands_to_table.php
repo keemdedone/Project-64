@@ -60,6 +60,7 @@ class AddMangasGamesRecommandsToTable extends Migration
                     'id' => '1',
                     'name' => 'No Game No Life',
                     'type' => 'fantasy',
+                    'writer' => 'n',
                     'description' => 'good idea manga',
                     'point' => '10'
                 )
@@ -70,6 +71,7 @@ class AddMangasGamesRecommandsToTable extends Migration
                     'id' => '2',
                     'name' => 'Goblin Slayer',
                     'type' => 'fantasy',
+                    'writer' => 'n',
                     'description' => 'blood stike',
                     'point' => '10'
                 )
@@ -80,6 +82,7 @@ class AddMangasGamesRecommandsToTable extends Migration
                     'id' => '3',
                     'name' => 'Kimisuno Yaiba',
                     'type' => 'demon',
+                    'writer' => 'n',
                     'description' => 'demon vs demon-slayer',
                     'point' => '10'
                 )
@@ -90,6 +93,18 @@ class AddMangasGamesRecommandsToTable extends Migration
                     'id' => '4',
                     'name' => 'Call her GOD, Susumiya Haruhi',
                     'type' => 'school life',
+                    'writer' => 'n',
+                    'description' => 'day of SS HQ',
+                    'point' => '10'
+                )
+            );
+
+            DB::table('mangas')->insert(
+                array(
+                    'id' => '5',
+                    'name' => 'Call her GOD, Susumiya Haruhi',
+                    'type' => 'school life',
+                    'writer' => 'n',
                     'description' => 'day of SS HQ',
                     'point' => '10'
                 )
