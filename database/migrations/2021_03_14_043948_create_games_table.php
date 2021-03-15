@@ -23,7 +23,7 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->string('name',200);
             $table->string('type',50);
-            $table->string('description',200);
+            $table->string('description',1000);
             $table->integer('point');
             $table->timestamps();
         });

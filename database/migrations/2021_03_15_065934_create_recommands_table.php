@@ -17,7 +17,7 @@ class CreateRecommandsTable extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('review_by',50);
-            $table->string('description',200);
+            $table->string('description',500);
             $table->timestamps();
         });
     }
