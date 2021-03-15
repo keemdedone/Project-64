@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 use Psr\Http\Message\ServerRequestInterface as Request; 
 use App\Models\Game;
 use App\Models\Recommand; 
@@ -42,8 +45,7 @@ class GameController extends Controller
 
     function create(Request $request) {
         $game = Game::create($request->getParsedBody());
-        return redirect()->route('game-list')
-        ;
+        return redirect()->route('game-list');
     }
 
     function updateForm($gameId) {

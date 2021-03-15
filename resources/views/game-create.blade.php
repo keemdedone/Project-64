@@ -4,13 +4,8 @@
 
 @section('content')
     <table>
-        <form action="{{ route('game-create')}}" method="post">
+        <form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
         @csrf
-            <tr>
-                <td>Photo </td>
-                <td>:</td>
-                <td><input type="file" name="file"></td>
-            </tr>
             <tr>
                 <td>Name </td>
                 <td>:</td>
