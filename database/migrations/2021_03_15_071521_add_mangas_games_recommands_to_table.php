@@ -140,7 +140,7 @@ class AddMangasGamesRecommandsToTable extends Migration
                 array(
                     'id' => '1',
                     'name' => 'Top 10 MMORPG GAME Recommand!!!',
-                    'type' => 'game',
+                    'type' => 'Game',
                     'review_by' => 'Komchan Thongsen',
                     'description' => 'This is game recommand for you, MMORPG player',
                 )
@@ -150,7 +150,7 @@ class AddMangasGamesRecommandsToTable extends Migration
                 array(
                     'id' => '2',
                     'name' => 'Top 10 FPS GAME Recommand!!!',
-                    'type' => 'game',
+                    'type' => 'Game',
                     'review_by' => 'Komchan Thongsen',
                     'description' => 'This is game recommand for you, FPS player',
                 )
