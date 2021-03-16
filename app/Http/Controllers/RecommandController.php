@@ -55,6 +55,37 @@ class RecommandController extends Controller
         ]);
     }
 
+    function addgameForm(Request $request, $recommandId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail();
+        $query = Game::orderBy('id')->whereDoesntHave('recommands', function($innerQuery) use ($recommand) { 
+                $innerQuery->where('id', $recommand->id); });
+        $data = $request->getQueryParams();
+        $term = (key_exists('term', $data))? $data['term'] : '';
+        foreach(preg_split('/\s+/', $term) as $word) {
+            $query->where(function($innerQuery) use ($word) {
+                return $innerQuery
+                    ->where('id', 'LIKE', "%{$word}%")
+                    ->orWhere('name', 'LIKE', "%{$word}%")
+                ;
+            });
+        }
+        return view('recommand-add-game', [
+            'title' => "{$this->title} {$recommand->id} : Add game",
+            'term' => $term,
+            'recommand' => $recommand,
+            'games' => $query->paginate(5),
+        ]);
+    }
+
+    function addgame(Request $request, $recommandId) {
+        $data = $request->getParsedBody();
+        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+        $game = Game::where('id',$data['game'])->FirstOrFail(); 
+        $game->recommands()->associate($recommand);  
+        $game->save();
+        return back();
+    }
+
     function createForm() {
         return view('recommand-create', [
         'title' => "{$this->title} : Create",

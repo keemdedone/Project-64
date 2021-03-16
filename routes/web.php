@@ -47,3 +47,5 @@ Route::get('/recommand/create', [RecommandController::class, 'createForm'])->nam
 Route::post('/recommand/create', [RecommandController::class, 'create'])->name('recommand-create');
 Route::get('/recommand/{recommand}', [RecommandController::class,'show'])->name('recommand-view');
 Route::get('/recommand/{recommand}/game', [RecommandController::class, 'showGame'])->name('recommand-view-game');
+Route::get('/recommand/{recommand}/game/add',[RecommandController::class, 'addgameForm'])->name('recommand-add-game-form');    
+Route::post('/recommand/{recommand}/game/add',[RecommandController::class, 'addgame'])->name('recommand-add-game');

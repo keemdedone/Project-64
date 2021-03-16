@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
-    protected $fillable = ['name','type','description','point'];
+    protected $fillable = ['id','name','type','recommands_id','description','point'];
     function recommands() {
-        return $this->belongsTo(Recommands::class);
+        return $this->belongsTo(Recommand::class);
     }
 }

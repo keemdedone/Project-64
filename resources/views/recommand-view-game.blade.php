@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <li>
-                <a href ="">Add game </a> 
+                <a href ="{{ route('recommand-add-game-form',['recommand' => $recommand->id]) }}">Add game </a> 
             </li>
         </ul>
     </nav>
@@ -29,7 +29,7 @@
                 <tr>
                     <td>
                         <b>
-                        <a href="{{ route('game-view', ['game' => $game->id]) }}"> {{ $game->id }} </a>
+                        <a href="{{ route('game-view', ['game' => $game -> id]) }}"> {{ $game->id }} </a>
                         </b>
                     </td>
                     <td>{{ $game->name }}</td>
