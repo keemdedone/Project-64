@@ -184,6 +184,17 @@ ul {
     
 }
 
+.status{
+    text-align: center;
+    margin: 20px auto 20px auto;
+   
+   }
+
+  .status span{
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+   }
+
 
 
 

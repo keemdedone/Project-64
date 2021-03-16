@@ -60,13 +60,13 @@ class GameController extends Controller
         $game->save();
         return redirect()->route('game-view',[
             'game' => $game->id,
-        ]);
+        ])->with('status', "Game {$game->code} was updated.");
     }
 
     function delete($gameId){
         $game = Game::where('id',$gameId)->FirstOrFail();
         $game->delete();
         return redirect()->route('game-list')
-        ;
+        ->with('status', "Game {$game->code} was delete !!!");
     }
 }

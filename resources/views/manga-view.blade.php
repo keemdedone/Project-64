@@ -3,9 +3,18 @@
 @section('title',$title)
 
 @section('content')
+
+
+<body>
+
     <a href="{{ route('manga-update-form',['manga' => $manga->id])}}" class="alias">Update this Review</a>
     <a href="{{ route('manga-delete', ['manga' => $manga->id]) }}" class="alias"> DELETE this Review</a>
-
+    
+    @if(session()->has('status'))
+<div class="status">
+<span>{{ session()->get('status') }}</span>
+</div>
+@endif
     
     <div>
     <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>

@@ -13,10 +13,10 @@
 @endsection
 @section('content')
 <br /><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a><br />
-    <table border="1" align="center">
+<table border="0" align="center" class="table" style="margin-top: 50px;"> 
         <tr>
             @foreach ($recommands as $recommand)
-                    <td>
+                    <td class="glow-button">
                         <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}" class="alias">
                             <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
                             <h3>{{$recommand->name}}</h3>
