@@ -44,3 +44,4 @@ Route::get('/manga/{manga}/delete', [MangaController::class, 'delete'])->name('m
 
 Route::get('/recommand', [RecommandController::class,'list'])->name('recommand-list');
 Route::get('/recommand/{recommand}', [RecommandController::class,'show'])->name('recommand-view');
+Route::get('/recommand/{recommand}/game', [RecommandController::class, 'showGame'])->name('recommand-view-game');

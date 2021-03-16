@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request; 
 use App\Models\Recommand;
+use App\Models\Game;
+use App\Models\Manga;
 
 class RecommandController extends Controller
 {
@@ -30,6 +32,26 @@ class RecommandController extends Controller
         return view('recommand-view', [
         'title' => "{$this->title} : View",
         'recommand' => $recommand,
+        ]);
+    }
+
+    function showGame(Request $request, $recommandId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail();
+        $data = $request->getQueryParams();
+        $query = $recommand->games()->orderBy('id');
+        $term = (key_exists('term', $data))? $data['term'] : '';
+        foreach(preg_split('/\s+/', $term) as $word) {
+            $query->where(function($innerQuery) use ($word) {
+                return $innerQuery
+                ->where('name', 'LIKE', "%{$word}%")
+                        ;
+                    });
+                }
+        return view('recommand-view-game', [
+            'title' => "{$this->title} {$recommand->type} : game",
+            'term' => $term,
+            'recommand' => $recommand,
+            'games' => $query->paginate(5),
         ]);
     }
 }
