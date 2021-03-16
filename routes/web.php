@@ -49,3 +49,6 @@ Route::get('/recommand/{recommand}', [RecommandController::class,'show'])->name(
 Route::get('/recommand/{recommand}/game', [RecommandController::class, 'showGame'])->name('recommand-view-game');
 Route::get('/recommand/{recommand}/game/add',[RecommandController::class, 'addgameForm'])->name('recommand-add-game-form');    
 Route::post('/recommand/{recommand}/game/add',[RecommandController::class, 'addgame'])->name('recommand-add-game');
+Route::get('/recommand/{recommand}/manga', [RecommandController::class, 'showManga'])->name('recommand-view-manga');
+Route::get('/recommand/{recommand}/manga/add',[recommandController::class, 'addmangaForm'])->name('recommand-add-manga-form');    
+Route::post('/recommand/{recommand}/manga/add',[recommandController::class, 'addmanga'])->name('recommand-add-manga');

@@ -28,10 +28,15 @@ class RecommandController extends Controller
     }
 
     function show($recommandId) {
-        $recommand = Recommand::where('id', $recommandId)->firstOrFail(); 
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail();
+        $check = TRUE;
+        if ($recommand -> type == "game"){
+            $check = "game";
+        } else {$check = "manga";}
         return view('recommand-view', [
         'title' => "{$this->title} : View",
         'recommand' => $recommand,
+        'check' => $check,
         ]);
     }
 
@@ -83,6 +88,58 @@ class RecommandController extends Controller
         $game = Game::where('id',$data['game'])->FirstOrFail(); 
         $game->recommands()->associate($recommand);  
         $game->save();
+        return back();
+    }
+
+    function showManga(Request $request, $recommandId) {
+        $recommand = recommand::where('id', $recommandId)->firstOrFail();
+        $data = $request->getQueryParams();
+        $query = $recommand->mangas()->orderBy('id');
+        $term = (key_exists('term', $data))? $data['term'] : '';
+        foreach(preg_split('/\s+/', $term) as $word) {
+            $query->where(function($innerQuery) use ($word) {
+                return $innerQuery
+                ->where('id', 'LIKE', "%{$word}%")
+                ->orWhere('name', 'LIKE', "%{$word}%")
+                        ;
+                    });
+                }
+        return view('recommand-view-manga', [
+            'title' => "{$this->title} {$recommand->id} : manga",
+            'term' => $term,
+            'recommand' => $recommand,
+            'mangas' => $query->paginate(5),
+        ]);
+    }
+
+    function addmangaForm(Request $request, $recommandId) {
+        $recommand = recommand::where('id', $recommandId)->firstOrFail();
+        $query = manga::orderBy('id')->whereDoesntHave('recommands', function($innerQuery) use ($recommand) {
+                $innerQuery->where('id', $recommand->id); });
+        $data = $request->getQueryParams();
+        $term = (key_exists('term', $data))? $data['term'] : '';
+        foreach(preg_split('/\s+/', $term) as $word) {
+            $query->where(function($innerQuery) use ($word) {
+                return $innerQuery
+                    ->where('id', 'LIKE', "%{$word}%")
+                    ->orWhere('name', 'LIKE', "%{$word}%")  
+                ;
+            });
+        }
+        return view('recommand-add-manga', [
+            'title' => "{$this->title} {$recommand->id} : Add manga",
+            'term' => $term,
+            'recommand' => $recommand,
+            'mangas' => $query->paginate(5),
+        ]);
+    }
+
+    function addmanga(Request $request, $recommandId) {
+        $data = $request->getParsedBody();
+        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+        $manga = Manga::where('id',$data['manga'])->FirstOrFail(); 
+        $manga->recommands()->associate($recommand);  
+        $manga->save();
         return back();
     }
 
