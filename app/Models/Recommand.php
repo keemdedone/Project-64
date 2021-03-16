@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Recommand extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','name','review_by','description'];
+    protected $fillable = ['id','name','type','review_by','description'];
 
     function games() {
         return $this->hasMany(Game::class,'recommands_id'); 

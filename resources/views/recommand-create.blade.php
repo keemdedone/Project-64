@@ -12,6 +12,16 @@
                 <td><input type="text" name="name"></td>
             </tr>
             <tr>
+                <td>Select Type</td>
+                <td>:</td>
+                <td>
+                    <select name="type">
+                        <option value="game">Game</option>
+                        <option value="manga">Manga</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td>Review By </td>
                 <td>:</td>
                 <td><input type="text" name="review_by"></td>

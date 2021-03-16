@@ -94,7 +94,6 @@ class RecommandController extends Controller
 
     function create(Request $request) {
         $recommand = Recommand::create($request->getParsedBody());
-        return redirect()->route('recommand-list')
-        ;
+        return redirect()->route('recommand-list');
     }
 }
