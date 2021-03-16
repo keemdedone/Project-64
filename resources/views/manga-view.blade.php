@@ -37,6 +37,10 @@
         <td ><strong>Writer </strong></td> <td>::</td>
         <td >{{ $manga->writer }}</td>
       </tr>
+      <tr class="bo">
+        <td ><strong>Point </strong></td> <td>::</td>
+        <td >{{ $game->point }}/10</td>
+      </tr>
       
     
   </table >

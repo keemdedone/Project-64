@@ -28,6 +28,10 @@
         <td ><strong>Type </strong></td> <td>::</td>
         <td >{{ $game->type }}</td>
       </tr>
+      <tr class="bo">
+        <td ><strong>Point </strong></td> <td>::</td>
+        <td >{{ $game->point }}/10</td>
+      </tr>
       
     
   </table >
