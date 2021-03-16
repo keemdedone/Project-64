@@ -16,8 +16,8 @@
                 <td>:</td>
                 <td>
                     <select name="type">
-                        <option value="game">Game</option>
-                        <option value="manga">Manga</option>
+                        <option value="Game">Game</option>
+                        <option value="Manga">Manga</option>
                     </select>
                 </td>
             </tr>

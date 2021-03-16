@@ -10,10 +10,10 @@
         <select name = "type" value="{{ $recommand->type }}" selected>
             @if ($recommand->type == "Manga")
                 <option value="{{ $recommand->type }}">{{ $recommand->type }}</option>
-                <option value="game">game</option>
+                <option value="Game">Game</option>
             @else
                 <option value="{{ $recommand->type }}">{{ $recommand->type }}</option> 
-                <option value="manga">manga</option>
+                <option value="Manga">Manga</option>
             @endif
         </select><br>
         Review By : <input type="text" name="review_by" value="{{ $recommand->review_by }}"> <br>
