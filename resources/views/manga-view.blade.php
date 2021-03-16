@@ -39,7 +39,7 @@
       </tr>
       <tr class="bo">
         <td ><strong>Point </strong></td> <td>::</td>
-        <td >{{ $game->point }}/10</td>
+        <td >{{ $manga->point }}/10</td>
       </tr>
       
     
