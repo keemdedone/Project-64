@@ -34,11 +34,13 @@ class RecommandController extends Controller
             $check = "game";
         } else {$check = "manga";}
         return view('recommand-view', [
-        'title' => "{$this->title} : View",
+        'title' => "{$this->title} {$recommand -> name}: View",
         'recommand' => $recommand,
         'check' => $check,
         ]);
     }
+
+    /* Game-Function Section */
 
     function showGame(Request $request, $recommandId) {
         $recommand = Recommand::where('id', $recommandId)->firstOrFail();
@@ -53,7 +55,7 @@ class RecommandController extends Controller
                     });
                 }
         return view('recommand-view-game', [
-            'title' => "{$this->title} {$recommand->type} : game",
+            'title' => "{$this->title} {$recommand->name} : Game-List ",
             'term' => $term,
             'recommand' => $recommand,
             'games' => $query->paginate(5),
@@ -75,7 +77,7 @@ class RecommandController extends Controller
             });
         }
         return view('recommand-add-game', [
-            'title' => "{$this->title} {$recommand->id} : Add game",
+            'title' => "{$this->title} {$recommand->name} : Add game",
             'term' => $term,
             'recommand' => $recommand,
             'games' => $query->paginate(5),
@@ -91,6 +93,20 @@ class RecommandController extends Controller
         return back();
     }
 
+    /*
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    */
+
+    /* MANGA-Function Section */
+
     function showManga(Request $request, $recommandId) {
         $recommand = recommand::where('id', $recommandId)->firstOrFail();
         $data = $request->getQueryParams();
@@ -105,7 +121,7 @@ class RecommandController extends Controller
                     });
                 }
         return view('recommand-view-manga', [
-            'title' => "{$this->title} {$recommand->id} : manga",
+            'title' => "{$this->title} {$recommand->name} : manga",
             'term' => $term,
             'recommand' => $recommand,
             'mangas' => $query->paginate(5),
@@ -127,7 +143,7 @@ class RecommandController extends Controller
             });
         }
         return view('recommand-add-manga', [
-            'title' => "{$this->title} {$recommand->id} : Add manga",
+            'title' => "{$this->title} {$recommand->name} : Add manga",
             'term' => $term,
             'recommand' => $recommand,
             'mangas' => $query->paginate(5),
