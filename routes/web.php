@@ -43,5 +43,7 @@ Route::post('/manga/{manga}/update', [MangaController::class, 'update'])->name('
 Route::get('/manga/{manga}/delete', [MangaController::class, 'delete'])->name('manga-delete');
 
 Route::get('/recommand', [RecommandController::class,'list'])->name('recommand-list');
+Route::get('/recommand/create', [RecommandController::class, 'createForm'])->name('recommand-create-form'); 
+Route::post('/recommand/create', [RecommandController::class, 'create'])->name('recommand-create');
 Route::get('/recommand/{recommand}', [RecommandController::class,'show'])->name('recommand-view');
 Route::get('/recommand/{recommand}/game', [RecommandController::class, 'showGame'])->name('recommand-view-game');

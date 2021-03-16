@@ -54,4 +54,16 @@ class RecommandController extends Controller
             'games' => $query->paginate(5),
         ]);
     }
+
+    function createForm() {
+        return view('recommand-create', [
+        'title' => "{$this->title} : Create",
+        ]);
+    }
+
+    function create(Request $request) {
+        $recommand = Recommand::create($request->getParsedBody());
+        return redirect()->route('recommand-list')
+        ;
+    }
 }
