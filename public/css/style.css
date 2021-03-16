@@ -83,10 +83,14 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     
+    
    }
 
    
-    
+   .bo {
+    color: white;
+    text-align: left ; 
+  }
    
    .pp {
     border: 0px solid black;
@@ -96,14 +100,10 @@ nav a:hover {
   }
 
   .alias {
-    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+       cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
     
     }
 
-    .pointer {
-        cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
-        
-        }
     
 
           
@@ -137,6 +137,7 @@ ul {
   
   .active {
     background-color: #4CAF50;
+    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
   }
 
 
@@ -148,6 +149,7 @@ ul {
     border-color: black;
     text-align: center;
     margin-top: 0px;
+    margin-bottom: 300px;
     
     
     
@@ -164,15 +166,26 @@ ul {
     margin-top: 0px;
     
     
+    
 }
 
 .tableb {
     width:80%;
-    text-align: center;
     
-  
+    text-align: center; 
     
 }
+
+.tabledes {
+    width:50%;  
+    text-align:left; 
+    color: white;
+    margin-top: 5px;
+    
+}
+
+
+
 
 
 

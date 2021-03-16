@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <li>
-                <a href ="{{ route('recommand-add-game-form',['recommand' => $recommand->id]) }}">Add game </a> 
+                <a href ="{{ route('recommand-add-game-form',['recommand' => $recommand->id]) }}" class="alias">Add game </a> 
             </li>
         </ul>
     </nav>
@@ -27,9 +27,9 @@
             <tbody>
             @foreach($games as $game)
                 <tr>
-                    <td>
+                    <td class="alias">
                         <b>
-                        <a href="{{ route('game-view', ['game' => $game -> id]) }}"> {{ $game->id }} </a>
+                        <a href="{{ route('game-view', ['game' => $game -> id]) }}" > {{ $game->id }} </a>
                         </b>
                     </td>
                     <td>{{ $game->name }}</td>

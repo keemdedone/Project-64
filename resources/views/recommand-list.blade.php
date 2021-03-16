@@ -4,20 +4,20 @@
 
 @section('search')
 <body align="center">
-    <form action="{{ route('recommand-list') }}" method="get">
-        <label>
+    <form action="{{ route('recommand-list') }}" method="get" >
+        <label class="alias">
             <b>search</b>
-            <input type="text" name="term" value="{{$term}}" />
+            <input type="text" name="term" value="{{$term}}" class="alias"/>
         </label>
     </form>
 @endsection
 @section('content')
-<br /><a href="{{ route('recommand-create-form') }}">Create Recommend</a><br />
+<br /><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a><br />
     <table border="1" align="center">
         <tr>
             @foreach ($recommands as $recommand)
                     <td>
-                        <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}">
+                        <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}" class="alias">
                             <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
                             <h3>{{$recommand->name}}</h3>
                         </a>
