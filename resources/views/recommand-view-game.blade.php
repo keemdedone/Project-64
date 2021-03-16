@@ -33,6 +33,12 @@
                         </b>
                     </td>
                     <td>{{ $game->name }}</td>
+                    <td>
+                        <a href="{{ route('recommand-remove-game',[
+                            'recommand' =>$recommand -> id,
+                            'game' => $game -> id,
+                        ]) }}">Remove</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

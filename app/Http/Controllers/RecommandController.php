@@ -93,6 +93,14 @@ class RecommandController extends Controller
         return back();
     }
 
+    function removeGame($recommandId, $gameId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail();
+        $game = $recommand->games()->where('id', $gameId)->firstOrFail();
+        $game->recommands()->dissociate($recommand);
+        $game->save();
+        return back();
+    }
+
     /*
     *
     *
@@ -155,6 +163,14 @@ class RecommandController extends Controller
         $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
         $manga = Manga::where('id',$data['manga'])->FirstOrFail(); 
         $manga->recommands()->associate($recommand);  
+        $manga->save();
+        return back();
+    }
+
+    function removeManga($recommandId, $mangaId) {
+        $recommand = Recommand::where('id', $recommandId)->firstOrFail();
+        $manga = $recommand->mangas()->where('id', $mangaId)->firstOrFail();
+        $manga->recommands()->dissociate($recommand);  
         $manga->save();
         return back();
     }

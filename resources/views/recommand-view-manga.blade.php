@@ -22,6 +22,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,12 @@
                         </b>
                     </td>
                     <td>{{ $manga->name }}</td>
+                    <td>
+                        <a href="{{ route('recommand-remove-manga',[
+                            'recommand' =>$recommand -> id,
+                            'manga' => $manga -> id,
+                        ]) }}">Remove</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
