@@ -8,7 +8,7 @@ use App\Models\Manga;
 
 class RecommandController extends Controller
 {
-    private $title = 'recommand';
+    private $title = 'Recommend';
     function list(Request $request) { 
         $data = $request->getQueryParams();
         $query = Recommand::orderBy('id');

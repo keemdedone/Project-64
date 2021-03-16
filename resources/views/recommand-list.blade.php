@@ -12,7 +12,7 @@
     </form>
 @endsection
 @section('content')
-<br /><a href="{{ route('recommand-create-form') }}">Create Recommand</a><br />
+<br /><a href="{{ route('recommand-create-form') }}">Create Recommend</a><br />
     <table border="1" align="center">
         <tr>
             @foreach ($recommands as $recommand)
