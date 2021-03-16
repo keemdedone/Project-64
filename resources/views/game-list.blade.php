@@ -5,22 +5,23 @@
 @section('search')
 <body align="center">
     <form action="{{ route('game-list') }}" method="get">
-        <label>
+        <label class="alias">
             <b>search</b>
-            <input type="text" name="term" value="{{$term}}" />
+            <input type="text" name="term" value="{{$term}}" class="alias" />
         </label>
     </form>
 @endsection
 @section('content')
-    <table border="1" align="center"> 
+<table class="table0"><tr><td>
+    <table border="0" align="center" class="table"> 
         <tr>
         @foreach ($games as $game)
             @if ( ($game->id)/4 == 1)
                 <tr></tr>
             @endif
-                <td>
+                <td class="glow-button">
                     <a href="{{ route('game-view', ['game' => $game->id]) }}">
-                        <img src="{{ asset("images/game/g{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 250px;" /><br/>
+                        <img src="{{ asset("images/game/g{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>
                         <h3>{{$game->name}}</h3>
                         <h3>{{$game->game_img}}</h3>
                     </a>
@@ -28,6 +29,7 @@
         @endforeach 
         </tr>
     </table>
-    <form action="{{ route('game-list') }}">{{ $games->withQueryString()->links() }}</form>
+    </td></tr></table>
+    <form action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</form>
     </body>
 @endsection
