@@ -5,12 +5,11 @@
 @section('content')
     <a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias">UPDATE this Review</a>
     <a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"> DELETE this Review</a><br />
-
-    @if(session()->has('status'))
-<div class="status">
-<span>{{ session()->get('status') }}</span>
-</div>
-@endif    
+  @if(session()->has('status'))
+    <div class="status">
+      <span>{{ session()->get('status') }}</span>
+    </div>
+  @endif    
         <img src="{{ asset("images/game/g{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 180px; margin-top: 20px;"/>
       
 <div>

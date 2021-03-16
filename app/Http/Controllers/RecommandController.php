@@ -185,4 +185,35 @@ class RecommandController extends Controller
         $recommand = Recommand::create($request->getParsedBody());
         return redirect()->route('recommand-list');
     }
+
+    function updateForm($recommandId) {
+        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+        $game = Game::select('id')->get();
+        $manga = Manga::select('id')->get();
+        return view('recommand-update', [
+        'title' => "{$this->title} : Update",
+        'recommand' => $recommand,
+        'game' => $game,
+        'manga' => $manga,
+        ]);
+    }
+
+    function update(Request $request, $recommandId) {
+        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+        $recommand->fill($request->getParsedBody());
+        $recommand->save();
+        return redirect()->route('recommand-view',[
+            'recommand' => $recommand->id,
+        ])
+        ->with('status', "recommand {$recommand->id} was updated !!!")
+        ;
+    }
+
+    function delete($recommandId){
+        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+        $recommand->delete();
+        return redirect()->route('recommand-list')
+        ->with('status', "recommand {$recommand->id} was deleted !!!")
+        ;
+    }
 }
