@@ -96,6 +96,7 @@ nav a:hover {
   .alias {
        cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
        text-decoration: none;
+       color: white;
     
     }
 
@@ -155,12 +156,7 @@ ul {
     border-color: black;
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 300px;
-    
-    
-    
-    
-    
+    margin-bottom: 300px;   
 }
 
   .table0 {

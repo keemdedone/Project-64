@@ -164,7 +164,7 @@ class RecommandController extends Controller
         $manga = Manga::where('id',$data['manga'])->FirstOrFail(); 
         $manga->recommands()->associate($recommand);  
         $manga->save();
-        return back();
+        return back()->with('status', "Manga {$recommand->id} was added to recommand {$product->code}.");
     }
 
     function removeManga($recommandId, $mangaId) {
@@ -172,7 +172,7 @@ class RecommandController extends Controller
         $manga = $recommand->mangas()->where('id', $mangaId)->firstOrFail();
         $manga->recommands()->dissociate($recommand);  
         $manga->save();
-        return back();
+        return back()->with('status', "Manga {$recommand->id} was removed from recommand {$product->code}.");
     }
 
     function createForm() {
@@ -183,7 +183,8 @@ class RecommandController extends Controller
 
     function create(Request $request) {
         $recommand = Recommand::create($request->getParsedBody());
-        return redirect()->route('recommand-list');
+        return redirect()->route('recommand-list')->with('status', "Manga recommand {$recommand->id} was created !!!")
+        ;
     }
 
     function updateForm($recommandId) {
@@ -204,13 +205,13 @@ class RecommandController extends Controller
         $recommand->save();
         return redirect()->route('recommand-view',[
             'recommand' => $recommand->id,
-        ])->with('status', "recommand {$recommand->id} was updated !!!")
+        ])->with('status', "Manga recommand {$recommand->id} was updated !!!")
         ;
     }
 
     function delete($recommandId){
         $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
         $recommand->delete();
-        return redirect()->route('recommand-list')->with('status', "recommand {$recommand->id} was deleted !!!");
+        return redirect()->route('recommand-list')->with('status', "Manga recommand {$recommand->id} was deleted !!!");
     }
 }

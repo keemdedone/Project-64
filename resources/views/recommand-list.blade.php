@@ -3,6 +3,9 @@
 @section('title',$title)
 
 @section('search')
+
+    
+
 <body align="center">
     <form action="{{ route('recommand-list') }}" method="get" >
         <label class="alias">
@@ -12,7 +15,21 @@
     </form>
 @endsection
 @section('content')
-<br /><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a><br />
+<table class="" align="center">
+<tr>
+    <td>
+       <ul >
+        <li><a href="{{ route('recommand-create-form') }}" >Create Recommend</a> </li>
+       </ul>
+    </td>
+</tr>
+</table> 
+@if(session()->has('status'))
+    <div class="status">
+      <span>{{ session()->get('status') }}</span>
+    </div>
+  @endif
+
 <table border="0" align="center" class="table" style="margin-top: 50px;"> 
         <tr>
             @foreach ($recommands as $recommand)

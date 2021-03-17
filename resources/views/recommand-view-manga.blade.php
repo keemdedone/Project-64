@@ -3,6 +3,7 @@
 @section('title',$title)
 
 @section('content')
+
 <form action="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}" method="get">
     <label>
        <h3 class="text-center"> Search : <input type="text" name="term" value="{{ $term }}" size="40"></h3>

@@ -3,13 +3,48 @@
 @section('title',$title)
 
 @section('content')
-    @if ($check == "game")
-    <a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias">UPDATE this Game Review</a>
-    <a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias"> DELETE this Game Review</a><br />
-    <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}">Show Game</a>
+<table class="" align="center">
+@if ($check == "game")
+<tr>
+    <td>
+       <ul style="background-color: #4CAF50;">
+           <li><a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias" style="">UPDATE this Game Review</a></li>
+           <li><a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias"    style="background-color: red;"> DELETE this Game Review</a></li>
+           
+       </ul>
+       
+           <li><a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}" style="text-decoration: none; color: white;">Show Game</a></li>
+       
+    </td>
+</tr>
+</table> 
+@if(session()->has('status'))
+    <div class="status">
+      <span>{{ session()->get('status') }}</span>
+    </div>
+  @endif
+
+<table class="" align="center">
+    
     @else
-    <a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias">UPDATE this Manga Review</a>
-    <a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias"> DELETE this Manga Review</a><br />
-    <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}">Show Manga</a>
+
+    <tr>
+    <td>
+       <ul >
+           <li><a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias">UPDATE this Manga Review</a></li>
+           <li><a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias" style="background-color: red;"> DELETE this Manga Review</a></li>
+           
+       </ul>
+       <ul style="background-color: #4CAF50;">
+          <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}" style="text-decoration: none; color: white;">Show Manga</a>
+       </ul>
+    </td>
+</tr>
+</table> 
     @endif
+    @if(session()->has('status'))
+    <div class="status">
+      <span>{{ session()->get('status') }}</span>
+    </div>
+  @endif
 @endsection
