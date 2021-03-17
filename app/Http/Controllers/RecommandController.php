@@ -30,9 +30,9 @@ class RecommandController extends Controller
     function show($recommandId) {
         $recommand = Recommand::where('id', $recommandId)->firstOrFail();
         $check = TRUE;
-        if ($recommand -> type == "game"){
-            $check = "game";
-        } else {$check = "manga";}
+        if ($recommand -> type == "Game"){
+            $check = "Game";
+        } else {$check = "Manga";}
         return view('recommand-view', [
         'title' => "{$this->title} {$recommand -> name}: View",
         'recommand' => $recommand,
