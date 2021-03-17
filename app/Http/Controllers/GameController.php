@@ -43,7 +43,7 @@ class GameController extends Controller
 
     function create(Request $request) {
         $game = Game::create($request->getParsedBody());
-        return redirect()->route('game-list');
+        return redirect()->route('game-list')->with('status', "Game {$game->name} review was created.");
     }
 
     function updateForm($gameId) {

@@ -43,7 +43,7 @@ class MangaController extends Controller
 
     function create(Request $request) {
         $manga = Manga::create($request->getParsedBody());
-        return redirect()->route('manga-list')
+        return redirect()->route('manga-list')->with('status', "Manga {$manga->name} review was created.")
         ;
     }
 

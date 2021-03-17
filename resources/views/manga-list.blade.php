@@ -14,6 +14,12 @@
 @endsection
 @section('content')
 
+    @if(session()->has('status'))
+        <div class="status">
+            <span>{{ session()->get('status') }}</span>
+        </div>
+    @endif  
+
     <table border="0" align="center" class="table">
         <tr >
         @foreach ($mangas as $manga)
