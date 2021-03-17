@@ -183,7 +183,7 @@ class RecommandController extends Controller
 
     function create(Request $request) {
         $recommand = Recommand::create($request->getParsedBody());
-        return redirect()->route('recommand-list');
+        return redirect()->route('recommand-list')->with('status', "{$recommand->name} Recommand was created !!!");
     }
 
     function updateForm($recommandId) {
@@ -204,13 +204,13 @@ class RecommandController extends Controller
         $recommand->save();
         return redirect()->route('recommand-view',[
             'recommand' => $recommand->id,
-        ])->with('status', "recommand {$recommand->id} was updated !!!")
+        ])->with('status', "{$recommand->name} Recommand was updated !!!")
         ;
     }
 
     function delete($recommandId){
         $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
         $recommand->delete();
-        return redirect()->route('recommand-list')->with('status', "recommand {$recommand->id} was deleted !!!");
+        return redirect()->route('recommand-list')->with('status', "{$recommand->name} Recommand was deleted !!!");
     }
 }

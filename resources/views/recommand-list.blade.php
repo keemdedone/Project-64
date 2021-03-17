@@ -13,6 +13,11 @@
 @endsection
 @section('content')
 <br /><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a><br />
+    @if(session()->has('status'))
+        <div class="status">
+            <span>{{ session()->get('status') }}</span>
+        </div>
+    @endif 
 <table border="0" align="center" class="table" style="margin-top: 50px;"> 
         <tr>
             @foreach ($recommands as $recommand)

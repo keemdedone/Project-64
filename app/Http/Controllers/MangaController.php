@@ -61,13 +61,13 @@ class MangaController extends Controller
         $manga->save();
         return redirect()->route('manga-view',[
             'manga' => $manga->id,
-        ])->with('status', "Manga {$manga->code} was updated.");
+        ])->with('status', "Manga {$manga->name} was updated.");
     }
 
     function delete($mangaId){
         $manga = Manga::where('id',$mangaId)->FirstOrFail();
         $manga->delete();
         return redirect()->route('manga-list')
-        ->with('status', "Manga {$manga->code} was delete !!!");
+        ->with('status', "Manga {$manga->name} was delete !!!");
     }
 }

@@ -21,7 +21,6 @@
     </td>
 </tr>
 </table>
-
   @if(session()->has('status'))
     <div class="status">
       <span>{{ session()->get('status') }}</span>

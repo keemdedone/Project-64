@@ -12,4 +12,9 @@
     <a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias"> DELETE this Manga Review</a><br />
     <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}">Show Manga</a>
     @endif
+    @if(session()->has('status'))
+        <div class="status">
+            <span>{{ session()->get('status') }}</span>
+        </div>
+    @endif 
 @endsection
