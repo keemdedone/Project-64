@@ -29,6 +29,6 @@
             
         <form>
     </table>
-    <input type="submit" value="Create" class="submit">
+    <input type="submit" value="Update" class="submit">
     </form>
 @endsection

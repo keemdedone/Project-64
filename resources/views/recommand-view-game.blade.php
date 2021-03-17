@@ -17,11 +17,12 @@
     </nav>
 </form>
     <main>
-        <table align="center" border="1">
+        <table align="center" border="1" class="tablec">
             <thead>
-                <tr>
+                <tr class="tableco">
                     <th>ID</th>
                     <th>Name</th>
+                    <th>remove</th>
                 </tr>
             </thead>
             <tbody>

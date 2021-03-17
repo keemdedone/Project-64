@@ -12,7 +12,25 @@
     </form>
 @endsection
 @section('content')
-<br /><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a><br />
+
+<table class="tableb-sub" align="center" >
+<tr>
+    <td>
+
+<table class="" align="center">
+<tr>
+    <td>
+       <ul >
+            <li><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a></li>
+       </ul>
+    </td>
+</tr>
+</table> 
+  
+    </td>
+</tr>
+</table>
+
     @if(session()->has('status'))
         <div class="status">
             <span>{{ session()->get('status') }}</span>
@@ -22,7 +40,7 @@
         <tr>
             @foreach ($recommands as $recommand)
                     <td class="glow-button">
-                        <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}" class="alias">
+                        <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}" class="alias" style="color: rgb(255, 255, 255);">
                             <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
                             <h3>{{$recommand->name}}</h3>
                         </a>

@@ -69,6 +69,19 @@ nav a:hover {
     
   }
 
+  .button2 {
+    transition-duration: 0.4s;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .button2:hover {
+    background-color: #256427; 
+    color: white;
+    text-decoration: none;
+  }
+
   .glow-button:hover {
     margin-top: 20px;
     box-shadow: 0 8px 100px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -96,6 +109,8 @@ nav a:hover {
   .alias {
        cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
        text-decoration: none;
+       
+       
     
     }
 
@@ -129,7 +144,7 @@ ul {
   li a:hover:not(.active) {
     background-color: #111;
   }
-  
+  /*////////////////////////////*/
   .active {
     background-color: #4CAF50;
     cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
@@ -176,6 +191,21 @@ ul {
     
     
 }
+
+.tablec{
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+.tableco{
+  border-collapse: collapse;
+  background-color: rgb(121, 121, 121);
+}
+
 /*sub menu 2*/
 
 .tableb-sub {
