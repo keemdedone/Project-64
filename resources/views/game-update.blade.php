@@ -4,11 +4,31 @@
 
 @section('content')
     <form action="{{ route('game-update',['game' => $game->id ]) }}" method="post">
+    <table align="center" style="margin-top: 20px;" class="table-create">
     @csrf
-        Name : <input type="text" name="name" value="{{ $game->name }}"> <br>
-        Type : <input type="text" name="type" value="{{ $game->type }}"> <br>
-        Description : <input type="text" name="description" value="{{ $game->description }}"> <br>
-        Point : <input type="text" name="point" value="{{ $game->point }}"> <br>
-        <input type="submit" value="update">
+        <tr>
+                <td>Name </td>
+                <td>:</td>
+                <td><input type="text" name="name" value="{{ $game->name }}" class="input"></td>
+            </tr>
+            <tr>
+                <td>Type </td>
+                <td>:</td>
+                <td><input type="text" name="type" value="{{ $game->type }}" class="input"></td>
+            </tr>
+            <tr>
+                <td>Description </td>
+                <td>:</td>
+                <td><textarea name="description"  class="input">{{ $game->description }}</textarea></td>
+            </tr>
+            <tr>
+                <td>Point </td>
+                <td>:</td>
+                <td><input type="text" name="point" value="{{ $game->point }}" class="input"></td>
+            </tr>
+            
+        <form>
+    </table>
+    <input type="submit" value="Create" class="submit">
     </form>
 @endsection

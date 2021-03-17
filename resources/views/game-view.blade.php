@@ -3,8 +3,25 @@
 @section('title',$title)
 
 @section('content')
-    <a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias">UPDATE this Review</a>
-    <a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"> DELETE this Review</a><br />
+<table class="tableb-sub" align="center" >
+<tr>
+    <td>
+
+<table class="" align="center">
+<tr>
+    <td>
+       <ul >
+           <li><a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias" style="">UPDATE this Review</a></li>
+           <li><a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
+       </ul>
+    </td>
+</tr>
+</table> 
+  
+    </td>
+</tr>
+</table>
+
   @if(session()->has('status'))
     <div class="status">
       <span>{{ session()->get('status') }}</span>

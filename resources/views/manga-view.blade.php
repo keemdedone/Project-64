@@ -7,8 +7,24 @@
 
 <body>
 
-    <a href="{{ route('manga-update-form',['manga' => $manga->id])}}" class="alias">Update this Review</a>
-    <a href="{{ route('manga-delete', ['manga' => $manga->id]) }}" class="alias"> DELETE this Review</a>
+<table class="tableb-sub" align="center" >
+<tr>
+    <td>
+
+<table class="" align="center">
+<tr>
+    <td>
+       <ul >
+           <li><a href="{{ route('manga-update-form',['manga' => $manga->id])}}" class="alias" style="">UPDATE this Review</a></li>
+           <li><a href="{{ route('manga-delete', ['manga' => $manga->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
+       </ul>
+    </td>
+</tr>
+</table> 
+  
+    </td>
+</tr>
+</table>
     
     @if(session()->has('status'))
 <div class="status">

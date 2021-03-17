@@ -92,15 +92,10 @@ nav a:hover {
     text-align: left ; 
   }
    
-   .pp {
-    border: 0px solid black;
-    margin: auto;  
-    padding: 20px;
-    text-align: left ; 
-  }
-
+   
   .alias {
        cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+       text-decoration: none;
     
     }
 
@@ -140,6 +135,17 @@ ul {
     cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
   }
 
+  .active2 {
+    width: 100px;
+    height: 50px;
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+    border:1px;
+    border-radius: 2px;
+    
+    
+  }
+
 
   .table {
     table-layout: fixed;
@@ -150,6 +156,7 @@ ul {
     text-align: center;
     margin-top: 0px;
     margin-bottom: 300px;
+    
     
     
     
@@ -167,14 +174,24 @@ ul {
     
     
     
+    
 }
+/*sub menu 2*/
+
+.tableb-sub {
+  width:50%;
+  text-align: center; 
+}
+/* //////////// */ 
+
 
 .tableb {
     width:80%;
-    
-    text-align: center; 
+    text-align: center;
+     
     
 }
+
 
 .tabledes {
     width:50%;  
@@ -183,7 +200,7 @@ ul {
     margin-top: 5px;
     
 }
-
+/*show-status///////////////////////*/
 .status{
     text-align: center;
     margin: 20px auto 20px auto;
@@ -194,6 +211,40 @@ ul {
     padding: 10px 10px 10px 10px;
     border: 1px solid black;
    }
+
+/*create ////////////////////////////////*/
+   .table-create 
+   {
+    width:40%;
+    text-align: left;
+    background-color: #555555;
+    color: white;
+   }
+
+   .input 
+   {
+    width:80%;
+    height: 10px;
+    padding: 12px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  
+   }
+
+  .submit
+   {
+    width:40%;
+    height: 25px;
+    padding: 20px;
+    margin: 5px;
+    color:rgb(255, 255, 255);
+    background-color:#4CAF50;
+    border-radius: 4px;
+    text-align:center;
+   }
+  /*////////////////////////////////*/
 
 
 
