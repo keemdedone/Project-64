@@ -17,9 +17,8 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [LoginController::class, 'loginForm'])->name('login');
+
 Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
