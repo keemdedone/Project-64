@@ -27,6 +27,11 @@
         <form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
         @csrf
             <tr>
+                <td>Image</td>
+                <td>:</td>
+                <td><input type="file" name="img"></td>
+            </tr>
+            <tr>
                 <td>Name </td>
                 <td>:</td>
                 <td><input type="text" name="name" class="input"></td>

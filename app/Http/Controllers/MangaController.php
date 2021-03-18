@@ -8,6 +8,11 @@ use App\Models\Recommand;
 class MangaController extends Controller
 {
     private $title = 'Manga';
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     function list(Request $request) { 
         $data = $request->getQueryParams();
         $query = Manga::orderBy('id');

@@ -9,6 +9,11 @@ use App\Models\Manga;
 class RecommandController extends Controller
 {
     private $title = 'Recommend';
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     function list(Request $request) { 
         $data = $request->getQueryParams();
         $query = Recommand::orderBy('id');

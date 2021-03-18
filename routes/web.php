@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\RecommandController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,7 @@ Route::get('/recommand/{recommand}/manga', [RecommandController::class, 'showMan
 Route::get('/recommand/{recommand}/manga/add',[RecommandController::class, 'addmangaForm'])->name('recommand-add-manga-form');    
 Route::post('/recommand/{recommand}/manga/add',[RecommandController::class, 'addmanga'])->name('recommand-add-manga');
 Route::get('/recommand/{recommand}/manga/{manga}/remove',[RecommandController::class, 'removeManga'])->name('recommand-remove-manga');
+
+Route::get('/auth/login', [LoginController::class, 'loginForm'])->name('login'); // name this route to login by default setting only.
+Route::post('/auth/login', [LoginController::class, 'authenticate'])->name('authenticate');
+Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');

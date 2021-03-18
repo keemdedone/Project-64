@@ -8,6 +8,11 @@ use App\Models\Recommand;
 class GameController extends Controller
 {
     private $title = 'Game';
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     function list(Request $request) { 
         $data = $request->getQueryParams();
         $query = Game::orderBy('id');

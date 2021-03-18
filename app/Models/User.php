@@ -20,7 +20,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
+
+    function isAdministrator() {
+        return $this->role === 'ADMIN';
+    }
 
     /**
      * The attributes that should be hidden for arrays.

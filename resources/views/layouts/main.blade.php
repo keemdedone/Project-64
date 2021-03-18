@@ -9,9 +9,25 @@
     <title >KP Review - @yield('title')</title>
     <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}" >
     @yield('search')
+    <style>
+    .userColor{
+        color:white;
+    }
+    </style>
 </head>
 <body class="" align="center"> 
     <header>
+        @auth
+            <nav>
+                <ul>
+                    <li class="userColor">{{ \Auth::user()->name }}</li>
+                    <li>
+                        <a href="{{ route('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        @endauth
+
         <h1 >@yield('title')</h1>
         <table class="tableb" align="center" ><tr><td>
         <table class="table0" ><tr><td>
