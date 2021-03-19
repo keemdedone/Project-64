@@ -82,6 +82,21 @@ nav a:hover {
     text-decoration: none;
   }
 
+  .button3 {
+    height: 100%;
+    transition-duration: 0.4s;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .button3:hover {
+    height: 100%;
+    background-color: #256427; 
+    color: white;
+    text-decoration: none;
+  }
+
   .glow-button:hover {
     margin-top: 20px;
     box-shadow: 0 8px 100px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -198,6 +213,7 @@ ul {
   width: 25%;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: white;
   
 }
 
@@ -264,6 +280,16 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+}
+
+.table-search {
+
+  width: 100%;
+  padding: 10px 1px;
+  border-radius: 3px;
+  box-sizing: border-box;
+    
+  
 }
 
 button:hover {

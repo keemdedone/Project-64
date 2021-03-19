@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title >KP Review - @yield('title')</title>
-    <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}" >
-    @yield('search')
+    <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}">
+    <a class="table-search">@yield('search')</a>
     <style>
     .userColor{
         color:white;
@@ -20,7 +20,7 @@
         @auth
             <nav>
                 <ul>
-                    <li class="userColor">{{ \Auth::user()->name }}</li>
+                    <li> <a class="userColor">{{ \Auth::user()->name }}</a></li>
                     <li>
                         <a href="{{ route('logout') }}">Logout</a>
                     </li>
