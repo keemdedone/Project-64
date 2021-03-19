@@ -10,7 +10,7 @@
     <tr>
         <td>Name</td> 
         <td>:</td>  
-        <td><input type="text" name="name" value="{{ $recommand->name }}" class="input"></td> 
+        <td><input type="text" name="name" value="{{ old('recommand')?? $recommand->name }}" class="input"></td> 
    
     </tr>
     <tr>
@@ -29,12 +29,12 @@
     <tr>
        <td>Review By </td> 
        <td>: </td>
-       <td><input type="text" name="review_by" value="{{ $recommand->review_by }}" class="input"></td>
+       <td><input type="text" name="review_by" value="{{ old('recommand')?? $recommand->review_by }}" class="input"></td>
     </tr>
     <tr>
        <td>Description</td>  
        <td>:</td>  
-       <td><input type="text" name="description" value="{{ $recommand->description }}" class="input"></td> 
+       <td><input type="text" name="description" value="{{ old('recommand')?? $recommand->description }}" class="input"></td> 
         
    </tr>
 </table>
