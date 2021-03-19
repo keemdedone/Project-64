@@ -10,10 +10,12 @@
 <table class="" align="center">
 <tr>
     <td>
+    @can('update',\App\Models\Game::class)
        <ul >
            <li><a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias" style="">UPDATE this Review</a></li>
            <li><a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
        </ul>
+    @endcan
     </td>
 </tr>
 </table> 

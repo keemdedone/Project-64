@@ -9,6 +9,7 @@
     @if ($check == "Game")
 <tr>
     <td>
+        @can('update',\App\Models\Recommand::class)
        <ul >
              <li><a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias">UPDATE this Game Review</a></li>
              <li><a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias"  style="background-color: red;"> DELETE this Game Review</a></li>
@@ -17,22 +18,20 @@
 </tr>
 </table>
 <table class="button2" align="center"  border="0" style="width: 33.35%;">
-<tr >
-    <td >
-          
+<tr>
+    <td >         
       <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);">Show Game</a>
-       
     </td>
 </tr>
-<tr>
-       
+        @endcan
+<tr>    
 </table>
- 
 <table class="" align="center"  border="0">   
     @else
 <tr>
     <td>
        <ul >
+        @can('update',\App\Models\Recommand::class)
              <li><a href="{{ route('recommand-update-form',['recommand' => $recommand->id])}}" class="alias">UPDATE this Manga Review</a></li>
              <li><a href="{{ route('recommand-delete', ['recommand' => $recommand->id]) }}" class="alias" style="background-color: red;"> DELETE this Manga Review</a></li>
        </ul>
@@ -47,7 +46,7 @@
     </td>
 </tr>
 <tr>
-       
+        @endcan   
 </table>
     @endif
     @if(session()->has('status'))

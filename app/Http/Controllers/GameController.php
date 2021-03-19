@@ -41,17 +41,27 @@ class GameController extends Controller
     }
 
     function createForm() {
+        $this->authorize('update',Game::class);
         return view('game-create', [
         'title' => "{$this->title} Review Create Form",
         ]);
     }
 
     function create(Request $request) {
-        $game = Game::create($request->getParsedBody());
-        return redirect()->route('game-list')->with('status', "Game {$game->name} review was created.");
+        $this->authorize('update',Game::class);
+        move_uploaded_file($_FILES["img"]["tmp_name"],"D:/622110140/project/public/images/game/".$_FILES["img"]["name"]);
+        try {
+            $game = Game::create($request->getParsedBody());
+            return redirect()->route('game-list')->with('status', "Game {$game->name} was created.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function updateForm($gameId) {
+        $this->authorize('update',Game::class);
         $game = Game::where('id',$gameId)->FirstOrFail();
         return view('game-update', [
         'title' => "{$this->title} : Update",
@@ -60,18 +70,29 @@ class GameController extends Controller
     }
 
     function update(Request $request, $gameId) {
-        $game = Game::where('id',$gameId)->FirstOrFail();
-        $game->fill($request->getParsedBody());
-        $game->save();
-        return redirect()->route('game-view',[
-            'game' => $game->id,
-        ])->with('status', "Game {$game->name} review was updated.");
+        $this->authorize('update',Game::class);
+        try {
+            $game = Game::where('id',$gameId)->FirstOrFail();
+            $game->fill($request->getParsedBody());
+            $game->save();
+                return redirect()->route('game-list')->with('status', "Game {$game->name} was updated.");
+                } catch(\Exception $excp) {
+                    return back()->withInput()->withErrors([
+                    'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function delete($gameId){
-        $game = Game::where('id',$gameId)->FirstOrFail();
-        $game->delete();
-        return redirect()->route('game-list')
-        ->with('status', "Game {$game->name} review was delete !!!");
+        $this->authorize('update',Game::class);
+        try {
+            $game = Game::where('id',$gameId)->FirstOrFail();
+            $game->delete();
+            return redirect()->route('game-list')->with('status', "Game {$game->name} was deleted.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 }

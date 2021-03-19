@@ -41,18 +41,26 @@ class MangaController extends Controller
     }
 
     function createForm() {
+        $this->authorize('update',Manga::class);
         return view('manga-create', [
         'title' => "{$this->title} Review Create Form",
         ]);
     }
 
     function create(Request $request) {
-        $manga = Manga::create($request->getParsedBody());
-        return redirect()->route('manga-list')->with('status', "Manga {$manga->name} review was created.")
-        ;
+        $this->authorize('update',Manga::class);
+        try {
+            $manga = Manga::create($request->getParsedBody());
+            return redirect()->route('manga-list')->with('status', "Manga {$manga->name} was created.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function updateForm($mangaId) {
+        $this->authorize('update',Manga::class);
         $manga = Manga::where('id',$mangaId)->FirstOrFail();
         return view('manga-update', [
         'title' => "{$this->title} : Update",
@@ -61,18 +69,29 @@ class MangaController extends Controller
     }
 
     function update(Request $request, $mangaId) {
-        $manga = Manga::where('id',$mangaId)->FirstOrFail();
-        $manga->fill($request->getParsedBody());
-        $manga->save();
-        return redirect()->route('manga-view',[
-            'manga' => $manga->id,
-        ])->with('status', "Manga {$manga->name} was updated.");
+        $this->authorize('update',Manga::class);
+        try {
+            $manga = Manga::where('id',$mangaId)->FirstOrFail();
+            $manga->fill($request->getParsedBody());
+            $manga->save();
+                return redirect()->route('manga-list')->with('status', "Manga {$manga->name} was updated.");
+                } catch(\Exception $excp) {
+                    return back()->withInput()->withErrors([
+                    'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function delete($mangaId){
-        $manga = Manga::where('id',$mangaId)->FirstOrFail();
-        $manga->delete();
-        return redirect()->route('manga-list')
-        ->with('status', "Manga {$manga->name} was delete !!!");
+        $this->authorize('update',Manga::class);
+        try {
+            $manga = Manga::where('id',$mangaId)->FirstOrFail();
+            $manga->delete();
+            return redirect()->route('manga-list')->with('status', "Manga {$manga->name} was deleted.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 }

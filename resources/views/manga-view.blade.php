@@ -14,10 +14,12 @@
 <table class="" align="center">
 <tr>
     <td>
+    @can('update',\App\Models\Manga::class)
        <ul >
            <li><a href="{{ route('manga-update-form',['manga' => $manga->id])}}" class="alias" style="">UPDATE this Review</a></li>
            <li><a href="{{ route('manga-delete', ['manga' => $manga->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
        </ul>
+    @endcan
     </td>
 </tr>
 </table> 
@@ -26,11 +28,11 @@
 </tr>
 </table>
     
-    @if(session()->has('status'))
-<div class="status">
-<span>{{ session()->get('status') }}</span>
-</div>
-@endif
+  @if(session()->has('status'))
+    <div class="status">
+      <span>{{ session()->get('status') }}</span>
+    </div>
+  @endif
     
     <div>
     <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>

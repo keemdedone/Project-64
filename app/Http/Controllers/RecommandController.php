@@ -181,17 +181,26 @@ class RecommandController extends Controller
     }
 
     function createForm() {
+        $this->authorize('update',Recommand::class);
         return view('recommand-create', [
         'title' => "{$this->title} : Create",
         ]);
     }
 
     function create(Request $request) {
-        $recommand = Recommand::create($request->getParsedBody());
-        return redirect()->route('recommand-list')->with('status', "{$recommand->name} Recommand was created !!!");
+        $this->authorize('update',Recommand::class);
+        try {
+            $recommand = Recommand::create($request->getParsedBody());
+            return redirect()->route('recommand-list')->with('status', "Recommand {$recommand->name} was created.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function updateForm($recommandId) {
+        $this->authorize('update',Recommand::class);
         $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
         $game = Game::select('id')->get();
         $manga = Manga::select('id')->get();
@@ -204,18 +213,29 @@ class RecommandController extends Controller
     }
 
     function update(Request $request, $recommandId) {
-        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
-        $recommand->fill($request->getParsedBody());
-        $recommand->save();
-        return redirect()->route('recommand-view',[
-            'recommand' => $recommand->id,
-        ])->with('status', "{$recommand->name} Recommand was updated !!!")
-        ;
+        $this->authorize('update',Recommand::class);
+        try {
+            $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+            $recommand->fill($request->getParsedBody());
+            $recommand->save();
+                return redirect()->route('recommand-list')->with('status', "Recommand {$recommand->name} was updated.");
+                } catch(\Exception $excp) {
+                    return back()->withInput()->withErrors([
+                    'input' => $excp->getMessage(),
+            ]);
+        }
     }
 
     function delete($recommandId){
-        $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
-        $recommand->delete();
-        return redirect()->route('recommand-list')->with('status', "{$recommand->name} Recommand was deleted !!!");
+        $this->authorize('update',Recommand::class);
+        try {
+            $recommand = Recommand::where('id',$recommandId)->FirstOrFail();
+            $recommand->delete();
+            return redirect()->route('recommand-list')->with('status', "Recommand {$recommand->name} was deleted.");
+            } catch(\Exception $excp) {
+                return back()->withInput()->withErrors([
+                'input' => $excp->getMessage(),
+            ]);
+        }
     }
 }
