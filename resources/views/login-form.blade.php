@@ -1,24 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}" >
     <title>Login</title>
 </head>
+
 <body>
     <form action="{{ route('authenticate') }}" method="post">
+    <table align="center" border="0" bo class="table-login" style="margin-top: 150px;">
+    <tr><td>
+    <h1 align="center">Longin</h1>
+    <table align="center" border="0" class=""  style="width: 500px;">
         @csrf
-            <label>
-                <b>E-mail</b> <input type="text" name="email" />
-            </label><br />
-            <label>
-                <b>Password</b> <input type="password" name="password" />
-            </label><br />
-            <button type="submit">Login</button>
-    </form>
-        @error('email')
+        <tr>
+            <td ><label>E-mail </td> 
+        </tr>
+        <tr>
+            <td><input type="text" name="email" />
+            </label></td>
+        </tr>
+        <tr>
+            <td><label> Password </td>
+        </tr>
+        <tr>
+            <td><input type="password" name="password" />
+            </label></td>
+        </tr>
+        <tr>
+        <td><button type="submit">Login</button></td>
+        </tr>
+        
+        </table>
+<table align="center" border="1" class="status-error" >
+     <tr>
+       <td> @error('email')
             <div>{{ $message }}</div>
-        @enderror
+            @enderror
+        </td>
+     </tr>
+        </table>
+   </td>
+</tr>
+   </table>
+            
+    </form>
+        
 </body>
 </html>

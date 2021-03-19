@@ -230,6 +230,46 @@ ul {
     margin-top: 5px;
     
 }
+
+.table-login {
+
+  table-layout: fixed;
+    width: 40%;  
+    border:1px;
+    border-collapse: collapse;
+    border-color: black;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.425);
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 300px;
+  
+}
+
+.table-login [type=text], input[type=password] {
+  width: 100%;
+  margin: 8px ;
+  padding: 10px 1px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
 /*show-status///////////////////////*/
 .status{
     text-align: center;
@@ -238,6 +278,20 @@ ul {
    }
 
   .status span{
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+   }
+
+   .status-error{
+    text-align: center;
+    border-collapse: collapse;
+    background-color: red;
+    margin: 20px auto 20px auto;
+    color: white;
+   
+   }
+
+  .status-error span{
     padding: 10px 10px 10px 10px;
     border: 1px solid black;
    }
