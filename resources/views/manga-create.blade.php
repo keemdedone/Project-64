@@ -26,8 +26,18 @@
         <div class="alert">{{ $message }}</div>
     @enderror
     <table align="center" style="margin-top: 20px;" class="table-create">
-        <form action="{{ route('manga-create')}}" method="post">
+        <form action="{{ route('manga-create')}}" method="post" enctype= "multipart/form-data" >
         @csrf
+            <tr>
+                <td>Image</td>
+                <td>:</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td>ID </td>
+                <td>:</td>
+                <td><input type="text" name="id" class="input" value="{{ old('id') }}"></td>
+            </tr>
             <tr>
                 <td>Name </td>
                 <td>:</td>

@@ -3,13 +3,22 @@
 @section('title',$title)
 
 @section('content')
-
-<table align="center" style="margin-top: 20px;" class="table-create">
-    error('input')
+    @error('input')
         <div class="alert">{{ $message }}</div>
     @enderror
-        <form action="{{ route('recommand-create')}}" method="post">
+    <form action="{{ route('recommand-create')}}" method="post" enctype= "multipart/form-data">
         @csrf
+        <table align="center" style="margin-top: 20px;" class="table-create">
+            <tr>
+                <td>Image</td>
+                <td>:</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td>ID </td>
+                <td>:</td>
+                <td><input type="text" name="id" class="input" value="{{ old('id') }}"></td>
+            </tr>
             <tr>
                 <td>Name </td>
                 <td>:</td>
@@ -35,7 +44,7 @@
                 <td>:</td>
                 <td><input type="text" name="description" class="input" value="{{ old('description') }}"></td>
             </tr>
-        <form>
-    </table>
+        </table>
     <input type="submit" value="Create" class="submit">
+</form>
 @endsection

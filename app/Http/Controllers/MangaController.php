@@ -49,6 +49,7 @@ class MangaController extends Controller
 
     function create(Request $request) {
         $this->authorize('update',Manga::class);
+        move_uploaded_file($_FILES["image"]["tmp_name"],"D:/622110140/project/public/images/manga/".$_FILES["image"]["name"]);
         try {
             $manga = Manga::create($request->getParsedBody());
             return redirect()->route('manga-list')->with('status', "Manga {$manga->name} was created.");

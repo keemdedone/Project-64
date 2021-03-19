@@ -31,7 +31,12 @@
             <tr>
                 <td>Image</td>
                 <td>:</td>
-                <td><input type="file" name="img"></td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr>
+                <td>ID </td>
+                <td>:</td>
+                <td><input type="text" name="id" class="input" value="{{ old('id') }}"></td>
             </tr>
             <tr>
                 <td>Name </td>

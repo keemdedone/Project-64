@@ -189,6 +189,7 @@ class RecommandController extends Controller
 
     function create(Request $request) {
         $this->authorize('update',Recommand::class);
+        move_uploaded_file($_FILES["image"]["tmp_name"],"D:/622110140/project/public/images/recommand/".$_FILES["image"]["name"]);
         try {
             $recommand = Recommand::create($request->getParsedBody());
             return redirect()->route('recommand-list')->with('status', "Recommand {$recommand->name} was created.");
