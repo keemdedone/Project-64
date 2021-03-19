@@ -21,7 +21,9 @@
 <tr>
     <td>
        <ul >
+        @can('update',\App\Models\Recommand::class)
             <li><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a></li>
+        @endcan
        </ul>
     </td>
 </tr>

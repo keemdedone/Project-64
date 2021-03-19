@@ -12,8 +12,12 @@
 <tr>
     <td>
        <ul >
+        @can('update',\App\Models\Game::class)
         <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
+        @endcan
+        @can('update',\App\Models\Manga::class)
         <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
+        @endcan
        </ul>
     </td>
 </tr>

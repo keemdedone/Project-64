@@ -12,7 +12,9 @@
 <tr>
     <td>
        <ul >
+        @can('update',\App\Models\Recommand::class)
         <li><a href="{{ route('select-create-review') }}" >Create Review</a> </li>
+        @endcan
        </ul>
     </td>
 </tr>
