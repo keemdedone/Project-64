@@ -19,16 +19,18 @@
             <td ><label>E-mail </td> 
         </tr>
         <tr>
-            <td><input type="text" name="email" />
+            <td><input type="text" name="email"  />
             </label></td>
         </tr>
         <tr>
             <td><label> Password </td>
         </tr>
+        
         <tr>
             <td><input type="password" name="password" />
             </label></td>
         </tr>
+
         <tr>
         <td><button type="submit">Login</button></td>
         </tr>
@@ -36,10 +38,10 @@
         </table>
 <table align="center" border="1" class="status-error" >
      <tr>
-       <td> @error('email')
-            <div>{{ $message }}</div>
+        @error('email')
+       <td><div>{{ $message }}</div></td>
             @enderror
-        </td>
+       
      </tr>
         </table>
    </td>
