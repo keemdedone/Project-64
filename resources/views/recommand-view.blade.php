@@ -39,8 +39,9 @@
           อาทิ Counter Strike: Global Offensive และ DOTA 2 รวมถึงเกมอื่นๆ ที่สายฟรีคุ้นเคยกันเป็นอย่างดี</td>
   </tr>
   </table>
+  @else
 <table class="" align="center"  border="0">   
-    @else
+   
 <tr>
     <td>
        <ul >
@@ -57,11 +58,10 @@
           
     <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}" class="alias" style="color: rgb(255, 255, 255);">Show Manga</a>
     </td>
+    @endcan 
 </tr>
-<tr>
-        @endcan  
-        
-        
+
+              
 </table>
     @endif
     @if(session()->has('status'))
