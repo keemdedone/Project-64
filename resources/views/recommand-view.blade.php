@@ -74,15 +74,13 @@
     
 
 <table align="center" border="1"  class="tablec2" style="margin-top: 20px;">
-         <thead>
+            <thead>
                     <tr class="text-center">
                         <th>TOP</th>
                         <th>Manga name</th>
                     </tr>
-        </thead>
-    
+            </thead>    
         @foreach($mangas as $manga)
-
         <tbody>
             <tr>
                 <td class="alias">
