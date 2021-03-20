@@ -4,7 +4,7 @@
 
 @section('content')
 
-<table class="" align="center"  border="0">
+<table class="" align="center"  border="0" >
     @if ($check == "Game")
     <tr>
         <td>
@@ -16,7 +16,7 @@
         </td>
     </tr>
 </table>
-<table class="button2" align="center"  border="0" style="width: 33.35%;">
+<table class="submit2" align="center"  border="0" style="width: 20%;">
     <tr>    
         <td>         
             <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);">Show Game</a>
@@ -61,10 +61,10 @@
 </tr>
 </table>
 
-<table class="button2" align="center"  border="0" style="width: 34.6%;">
-    <tr>
+<table class="submit2"  align="center"  border="0" style="width: 20%;">
+    <tr >
         <td>   
-            <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}" class="alias" style="color: rgb(255, 255, 255);">Show Manga</a>
+            <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);" >Show Manga</a>
         </td>
     </tr>    
         @endcan       

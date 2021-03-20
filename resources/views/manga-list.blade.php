@@ -35,7 +35,12 @@
         @endforeach 
         </tr>
     </table>
-
-    <form action="{{ route('manga-list') }}" class="next">{{ $mangas->withQueryString()->links() }}</form>
+<table  align="center"> 
+    <tr>
+        <td>
+    <b action="{{ route('manga-list') }}" class="next">{{ $mangas->withQueryString()->links() }}</b>
+</td>
+</tr>
+</table>
     </body>
 @endsection

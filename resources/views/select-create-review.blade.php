@@ -4,21 +4,22 @@
 
 @section('content')
 
-<table class="tableb-sub" align="center" >
-<tr>
-    <td>
 
-<table class="" align="center">
+
+<table  border="0" style="width: 100%; ">
 <tr>
-    <td>
-       <ul >
+    <td class="submit3" style="width: 50%;"> 
+
         @can('update',\App\Models\Game::class)
-        <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
+        <b ><a href="{{ route('game-create-form') }}" style="color: white; text-decoration: none; font-size: 300%;">Game</a> </b>
+    
         @endcan
+    </td>
+    <td class="submit3" style="width: 50%;" >
         @can('update',\App\Models\Manga::class)
-        <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
+        <b><a href="{{ route('manga-create-form') }}" style="color: white; text-decoration: none; font-size: 300%;">Manga</a> </b>
         @endcan
-       </ul>
+
     </td>
 </tr>
 </table> 

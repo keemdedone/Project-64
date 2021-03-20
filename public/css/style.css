@@ -167,9 +167,19 @@ ul {
   
   li a:hover:not(.active) {
     background-color: #111;
+    
   }
+  
   /*////////////////////////////*/
   .active {
+    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+    width: 50px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+  }
+
+  .active3 {
     background-color: #4CAF50;
     cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
   }
@@ -383,7 +393,56 @@ button:hover {
     border-radius: 4px;
     text-align:center;
    }
+
+   .submit2
+   {
+    width:10%;
+    padding: 10px ;
+    color:rgb(255, 255, 255);
+    background-color:#4CAF50;
+    border-radius: 4px;
+    text-align:center;
+    margin-bottom: 50px;
+    text-decoration: none;
+    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+    
+   }
+
+   .submit2:hover {
+    height: 100%;
+    background-color: #256427; 
+    color: white;
+    text-decoration: none;
+  }
+
+  .submit3
+   {
+    width:10%;
+    height: 700px;
+    padding: 10px ;
+    color:rgb(255, 255, 255);
+    background-color:#000000c5;
+    border-radius: 4px;
+    text-align:center;
+    margin-bottom: 50px;
+    text-decoration: none;
+    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+    
+   }
+
+   .submit3:hover {
+    height: 100%;
+    background-color: #000000; 
+    color: white;
+    text-decoration: none;
+  }
+
   /*////////////////////////////////*/
+  .next
+  {
+    background-color: #000000;
+    cursor:url(https://2.bp.blogspot.com/-75RQYsSC3Nk/WDl7ImSBS0I/AAAAAAAAAB4/9DbYhWX_dlE1BwRuN3VX4aPNFCxel98FwCLcB/s1600/rubycursor.png), progress;
+  }
 
 
 

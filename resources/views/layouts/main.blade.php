@@ -32,7 +32,7 @@
         <table class="tableb" align="center" ><tr><td>
         <table class="table0" ><tr><td>
 <ul >
-        <li><a href="{{ route('homepage') }}" class="active">Homepage</a> </li>
+        <li><a href="{{ route('homepage') }}" class="active3">Homepage</a> </li>
         <li><a href="{{ route('game-list') }}" class="alias">Game-List</a> </li>
         <li><a href="{{ route('manga-list') }}" class="alias">Manga-List</a> </li>
         <li><a href="{{ route('recommand-list') }}" class="alias">Recommend-List</a> </li>

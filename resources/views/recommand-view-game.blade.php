@@ -8,13 +8,8 @@
        <h3 class="text-center"> Search : <input type="text" name="term" value="{{ $term }}" size="40"></h3>
     </label>
     {{ $games->withQueryString()->links() }}
-    <nav>
-        <ul>
-            <li>
-                <a href ="{{ route('recommand-add-game-form',['recommand' => $recommand->id]) }}" class="alias">Add game </a> 
-            </li>
-        </ul>
-    </nav>
+    <b class="" ><a href ="{{ route('recommand-add-game-form',['recommand' => $recommand->id]) }}" class="submit2">Add game </a></b>
+           
 </form>
     <main>
         <table align="center" border="1" class="tablec">

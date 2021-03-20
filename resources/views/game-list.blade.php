@@ -35,7 +35,12 @@
         @endforeach 
         </tr>
     </table>
-    
-    <form action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</form>
+    <table  align="center"> 
+    <tr>
+        <td>
+    <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
+    </td>
+</tr>
+</table>
     </body>
 @endsection
