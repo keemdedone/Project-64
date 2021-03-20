@@ -218,11 +218,32 @@ ul {
 
 .tablec{
   border-collapse: collapse;
+  text-align:left;
   border: 1px solid black;
   width: 25%;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: white;
+
+  
+}
+.tablec2{
+  border-collapse: collapse;
+  text-align:left;
+  border: 1px solid black;
+  padding-left: 10px;
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+
+  
+}
+.tablec2 td{
+  
+  padding-left: 10px;
+  
+
   
 }
 
@@ -258,7 +279,7 @@ ul {
 
 .table-login {
 
-  table-layout: fixed;
+    table-layout: fixed;
     width: 40%;  
     border:1px;
     border-collapse: collapse;

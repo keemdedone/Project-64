@@ -24,10 +24,17 @@
     </tr>
         @endcan   
 </table>
-<table align="center" border="0" >
-    <tr>
-        <td><img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/></td>
-    </tr>
+
+    <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
+  
+<table align="center" border="1" class="tablec2" >
+    
+    <thead>
+                    <tr  class="text-center">
+                        <th>TOP</th>
+                        <th>Game name</th>
+                    </tr>
+        </thead>
         @foreach($games as $game)
             <tr>
                 <td class="alias">
@@ -63,11 +70,20 @@
         @endcan       
 </table>
 
-<table align="center" border="0" >
-    <tr>
-        <td><img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/></td>
-    </tr>
+        <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
+    
+
+<table align="center" border="1"  class="tablec2" style="margin-top: 20px;">
+         <thead>
+                    <tr class="text-center">
+                        <th>TOP</th>
+                        <th>Manga name</th>
+                    </tr>
+        </thead>
+    
         @foreach($mangas as $manga)
+
+        <tbody>
             <tr>
                 <td class="alias">
                     <b>
@@ -76,10 +92,11 @@
                 </td>
                 <td><a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" >{{ $manga->name }}</a></td>    
             </tr>
+        </tbody>
         @endforeach  
 </table>
     @endif
-<table>
+<table  align="center" class="tabledes " border="0">
     <tr>
         <td>{{ $recommand -> description }}</td>
     </tr>
