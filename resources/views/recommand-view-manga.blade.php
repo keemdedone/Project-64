@@ -7,14 +7,8 @@
     <label>
        <h3 class="text-center"> Search : <input type="text" name="term" value="{{ $term }}" size="40"></h3>
     </label>
-    {{ $mangas->withQueryString()->links() }}
-    <nav>
-        <ul>
-            <li>
-                <a href ="{{ route('recommand-add-manga-form',['recommand' => $recommand->id]) }}">Add manga </a> 
-            </li>
-        </ul>
-    </nav>
+    <b class="text-center" >{{ $mangas->withQueryString()->links() }}<b>
+    <b class="addmanga"><a href ="{{ route('recommand-add-manga-form',['recommand' => $recommand->id]) }}">Add manga </a></b>
 </form>
     <main>
         <table align="center" border="1" class="tablec">

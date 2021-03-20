@@ -50,6 +50,8 @@
             @endforeach 
         </tr>
     </table>
-    <form action="{{ route('recommand-list') }}">{{ $recommands->withQueryString()->links() }}</form>
+        <form action="{{ route('recommand-list') }}">
+            <b>{{ $recommands->withQueryString()->links() }}</b>
+        </form>
     <body>
 @endsection

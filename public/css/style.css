@@ -4,8 +4,6 @@ html {
     line-height: 1.3em;
 }
 
-
-
 th{
     background-color: gray;
 }
@@ -18,8 +16,19 @@ nav ul {
     margin: 0px;
     padding: 0px;
     font-weight: bold;
-    font-size: 0.5cm;
-    
+    font-size: 0.5cm; 
+}
+
+.addmanga a:link{
+  height: 100%;
+  transition-duration: 0.4s;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 nav ul li {

@@ -156,17 +156,16 @@ class AddMangasGamesRecommandsToTable extends Migration
                 )
             );
 
-        DB::table('recommands')->insert(
-            array(
-                'id' => '3',
-                'name' => 'Top 10 MOBA GAME Recommand!!!',
-                'type' => 'Game',
-                'review_by' => 'Komchan Thongsen',
-                'description' => 'This is game recommand for you, MOBA player',
-            )
-        );
-        
-    });
+            DB::table('recommands')->insert(
+                array(
+                    'id' => '3',
+                    'name' => 'Top 10 MOBA GAME Recommand!!!',
+                    'type' => 'Game',
+                    'review_by' => 'Komchan Thongsen',
+                    'description' => 'This is game recommand for you, MOBA player',
+                )
+            );
+        });
     }
 
     /**
