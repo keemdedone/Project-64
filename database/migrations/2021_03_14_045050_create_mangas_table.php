@@ -17,7 +17,7 @@ class CreateMangasTable extends Migration
             $table->id();
             $table->string('name',50); 
             $table->string('type',50);
-            $table->integer('recommands_id')->nullble();
+            $table->integer('recommands_id')->nullable();
             $table->string('writer',50);
             $table->string('description',1500);
             $table->integer('point');
