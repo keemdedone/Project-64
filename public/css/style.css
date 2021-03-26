@@ -49,6 +49,7 @@ nav a:hover {
 
 .text-center {
     text-align: center;
+    
 }
 
 .copyright{
@@ -245,7 +246,8 @@ ul {
   width: 30%;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.226);
+  color: white;
 
   
 }

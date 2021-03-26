@@ -16,14 +16,19 @@
         </td>
     </tr>
 </table>
-<table class="submit2" align="center"  border="0" style="width: 20%;">
+<form >  
+<table class="" align="center"  border="0" style="">
     <tr>    
-        <td>         
-            <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);">Show Game</a>
+        <td> 
+<ul> <li>       
+            <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Game</a>
+</li>
+</ul>
         </td>
     </tr>
         @endcan   
 </table>
+</form>
 
     <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
   
@@ -31,8 +36,8 @@
     
     <thead>
                     <tr  class="text-center">
-                        <th>TOP</th>
-                        <th>Game name</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">TOP</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Game name</th>
                     </tr>
         </thead>
         @foreach($games as $game)
@@ -42,7 +47,7 @@
                         {{ $game->id }} 
                     </b>
                 </td>
-                <td><a href="{{ route('game-view', ['game' => $game -> id]) }}" >{{ $game->name }}</a></td>    
+                <td><a href="{{ route('game-view', ['game' => $game -> id]) }}" style="color: white; text-decoration: none;">{{ $game->name }}</a></td>    
             </tr>
         @endforeach  
 </table>
@@ -61,10 +66,12 @@
 </tr>
 </table>
 
-<table class="submit2"  align="center"  border="0" style="width: 20%;">
+<table class=""  align="center"  border="0" style="">
     <tr >
-        <td>   
-            <a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);" >Show Manga</a>
+        <td> 
+<ul>  
+<li><a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Manga</a></li>
+</ul>
         </td>
     </tr>    
         @endcan       
@@ -73,11 +80,11 @@
         <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
     
 
-<table align="center" border="1"  class="tablec2" style="margin-top: 20px;">
-            <thead>
-                    <tr class="text-center">
-                        <th>TOP</th>
-                        <th>Manga name</th>
+<table align="center" border="1"  class="tablec2" style="margin-top: 20px; background-color: rgba(0, 0, 0, 0.226); ">
+            <thead >
+                    <tr class="text-center" >
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">TOP</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Manga name</th>
                     </tr>
             </thead>    
         @foreach($mangas as $manga)
@@ -88,13 +95,13 @@
                         {{ $manga->id }} 
                     </b>
                 </td>
-                <td><a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" >{{ $manga->name }}</a></td>    
+                <td><a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" style="color: white; text-decoration: none;" >{{ $manga->name }}</a></td>    
             </tr>
         </tbody>
         @endforeach  
 </table>
     @endif
-<table  align="center" class="tabledes " border="0">
+<table  align="center" class="tabledes" border="0">
     <tr>
         <td>{{ $recommand -> description }}</td>
     </tr>

@@ -12,12 +12,12 @@
            
 </form>
     <main>
-        <table align="center" border="1" class="tablec">
+        <table align="center" border="1" class="tablec2">
             <thead>
-                <tr class="tableco">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>remove</th>
+                <tr class="tableco" align="center">
+                    <th style="background-color: rgba(0, 0, 0, 0.226); ">ID</th>
+                    <th style="background-color: rgba(0, 0, 0, 0.226); ">Name</th>
+                    <th style="background-color: rgba(0, 0, 0, 0.226); "></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,15 +25,12 @@
                 <tr>
                     <td class="alias">
                         <b>
-                        <a href="{{ route('game-view', ['game' => $game -> id]) }}" > {{ $game->id }} </a>
+                        <a href="{{ route('game-view', ['game' => $game -> id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a>
                         </b>
                     </td>
                     <td>{{ $game->name }}</td>
                     <td>
-                        <a href="{{ route('recommand-remove-game',[
-                            'recommand' =>$recommand -> id,
-                            'game' => $game -> id,
-                        ]) }}">Remove</a>
+                        <a href="{{ route('recommand-remove-game',['recommand' =>$recommand -> id,'game' => $game -> id,]) }}"  style="color: white;">Remove</a>
                     </td>
                 </tr>
             @endforeach

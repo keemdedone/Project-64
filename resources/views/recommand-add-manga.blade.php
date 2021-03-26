@@ -22,13 +22,13 @@ table{
     <main>
         <form action="{{ route('recommand-add-manga',['recommand' => $recommand->id]) }}" method="post">
         @csrf
-            <table align="center" border="1" class="tablec">
+            <table align="center" border="1" class="tablec2">
                 <thead>
-                    <tr class="tableco">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Recommand ID</th>
-                        <th></th>
+                    <tr class="tableco"  align="center">
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">ID</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Name</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Recommand ID</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); "></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,12 +36,12 @@ table{
                     <tr>
                         <td>
                             <b>
-                            <a href="{{ route('manga-view', ['manga' => $manga->id]) }}"> {{ $manga->id }} </a>
+                            <a href="{{ route('manga-view', ['manga' => $manga->id]) }}" style="color: white; text-decoration: none;"> {{ $manga->id }} </a>
                             </b>
                         </td>
                         <td>{{ $manga->name }}</td>
                         <td>{{ $manga->recommands_id }} </td>
-                        <td><button type="submit" name="manga" value="{{ $manga->id }}">Add manga</button></td>  
+                        <td><button type="submit" name="manga" value="{{ $manga->id }}">Add</button></td>  
                     </tr>
                 @endforeach
                 </tbody>

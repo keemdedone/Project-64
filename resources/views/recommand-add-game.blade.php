@@ -22,13 +22,13 @@ table{
     <main>
         <form action="{{ route('recommand-add-game',['recommand' => $recommand->id]) }}" method="post">
         @csrf
-            <table align="center" border="1" class="tablec">
+            <table align="center" border="1" class="tablec2">
                 <thead>
-                    <tr class="tableco">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Recommand ID</th>
-                        <th></th>
+                    <tr class="tableco" align="center">
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">ID</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Name</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); ">Recommand ID</th>
+                        <th style="background-color: rgba(0, 0, 0, 0.226); "></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,12 +36,12 @@ table{
                     <tr>
                         <td>
                             <b>
-                            <a href="{{ route('game-view', ['game' => $game->id]) }}"> {{ $game->id }} </a>
+                            <a href="{{ route('game-view', ['game' => $game->id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a>
                             </b>
                         </td>
                         <td>{{ $game->name }}</td>
                         <td>{{ $game->recommands_id }} </td>
-                        <td><button typee="submit" name="game" value="{{ $game->id }}">Add Game</button></td>  
+                        <td><button typee="submit" name="game" value="{{ $game->id }}">Add</button></td>  
                     </tr>
                 @endforeach
                 </tbody>

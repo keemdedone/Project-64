@@ -11,12 +11,12 @@
     <b class="" ><a href ="{{ route('recommand-add-manga-form',['recommand' => $recommand->id]) }}"  class="submit2" >Add manga </a></b>
 </form><br /><br />
     <main>
-        <table align="center" border="1" class="tablec">
+        <table align="center" border="1" class="tablec2">
             <thead>
-                <tr class="tableco">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>remove</th>
+                <tr class="tableco" align="center">
+                    <th style="background-color: rgba(0, 0, 0, 0.226); ">ID</th>
+                    <th style="background-color: rgba(0, 0, 0, 0.226); ">Name</th>
+                    <th style="background-color: rgba(0, 0, 0, 0.226); "></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,15 +24,12 @@
                 <tr>
                     <td>
                         <b>
-                        <a href="{{ route('manga-view', ['manga' => $manga -> id]) }}"> {{ $manga->id }} </a>
+                        <a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" style="color: white; text-decoration: none;"> {{ $manga->id }} </a>
                         </b>
                     </td>
                     <td>{{ $manga->name }}</td>
                     <td>
-                        <a href="{{ route('recommand-remove-manga',[
-                            'recommand' =>$recommand -> id,
-                            'manga' => $manga -> id,
-                        ]) }}">Remove</a>
+                        <a type="submit" href="{{ route('recommand-remove-manga',['recommand' =>$recommand -> id,'manga' => $manga -> id,]) }}" style="color: white;">Remove</a>
                     </td>
                 </tr>
             @endforeach
