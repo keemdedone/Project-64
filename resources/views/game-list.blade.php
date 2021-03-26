@@ -29,7 +29,6 @@
                     <a href="{{ route('game-view', ['game' => $game->id]) }}" class="alias" style="color: rgb(255, 255, 255);">
                         <img src="{{ asset("images/game/g{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 180px; margin-top: 20px;"/><br/>
                         <h3>{{$game->name}}</h3>
-                        <h3>{{$game->game_img}}</h3>
                     </a>
                 </td>
         @endforeach 
