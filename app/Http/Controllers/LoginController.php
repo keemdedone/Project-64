@@ -24,7 +24,7 @@ class LoginController extends Controller
                 session()->regenerate();   
                 return redirect()->intended(route('homepage')); 
             }
-        return back()->withErrors(['email' => 'The provided credentials do not match our records.']);
+        return back()->withErrors(['email' => 'Your email or Password wrong , Please try againg']);
     }
 
     function logout() {
