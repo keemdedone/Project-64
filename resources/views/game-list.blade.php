@@ -15,7 +15,7 @@
 
     @if(session()->has('status'))
         <div class="status">
-        <span>{{ session()->get('status') }}</span>
+            <span>{{ session()->get('status') }}</span>
         </div>
     @endif  
     
@@ -37,9 +37,9 @@
     <table  align="center"> 
     <tr>
         <td>
-    <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
-    </td>
-</tr>
-</table>
-    </body>
+            <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
+        </td>
+    </tr>
+    </table>
+</body>
 @endsection

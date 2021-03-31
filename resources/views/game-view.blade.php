@@ -4,24 +4,22 @@
 
 @section('content')
 <table class="tableb-sub" align="center" >
-<tr>
-    <td>
-
-<table class="" align="center">
-<tr>
-    <td>
-    @can('update',\App\Models\Game::class)
-       <ul >
-           <li><a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias" style="">UPDATE this Review</a></li>
-           <li><a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
-       </ul>
-    @endcan
-    </td>
-</tr>
-</table> 
-  
-    </td>
-</tr>
+  <tr>
+      <td>
+        <table align="center">
+          <tr>
+              <td>
+              @can('update',\App\Models\Game::class)
+                <ul >
+                    <li><a href="{{ route('game-update-form',['game' => $game->id])}}" class="alias" style="">UPDATE this Review</a></li>
+                    <li><a href="{{ route('game-delete', ['game' => $game->id]) }}" class="alias"    style="background-color: red;"> DELETE this Review</a></li>
+                </ul>
+              @endcan
+              </td>
+          </tr>
+        </table> 
+      </td>
+  </tr>
 </table>
   @if(session()->has('status'))
     <div class="status">
@@ -32,7 +30,6 @@
       
 <div>
   <table  align="center"> 
-   
       <tr class="bo">
         <td ><strong>Id </strong></td>   <td>::</td>
         <td >{{ $game->id }}</td>
@@ -48,19 +45,12 @@
       <tr class="bo">
         <td ><strong>Point </strong></td> <td>::</td>
         <td >{{ $game->point }}/10</td>
-      </tr>
-      
-    
+      </tr> 
   </table >
-
   <table align="center" border="0" class="tabledes">
-  <tr>
-     <td >{{ $game->description }}</td>
-  </tr>
+    <tr>
+      <td >{{ $game->description }}</td>
+    </tr>
   </table>
 </div> 
-
-
-
-
 @endsection

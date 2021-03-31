@@ -14,14 +14,14 @@
             <tr>
                 <td>
                     <h1 align="center">Longin</h1>
-                    <table align="center" border="0" class=""  style="width: 500px;">
+                    <table align="center" border="0"  style="width: 500px;">
                         @csrf
                         <tr>
                             <td>E-mail </td> 
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" name="email"  />
+                                <input type="text" name="email" />
                             </td>
                         </tr>
                         <tr>
@@ -38,7 +38,6 @@
                             </td>
                         </tr>
                     </table>
-
                     <table align="center" border="1" class="status-error" >
                         <tr>
                             @error('email')

@@ -25,9 +25,9 @@
     @error('input')
         <div class="alert">{{ $message }}</div>
     @enderror
-<table align="center" style="margin-top: 20px;" class="table-create">
-        <form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
-        @csrf
+<form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
+    @csrf
+    <table align="center" style="margin-top: 20px;" class="table-create">
             <tr>
                 <td>Image</td>
                 <td>:</td>
@@ -58,8 +58,7 @@
                 <td>:</td>
                 <td><input type="text" name="point" class="input" value="{{ old('point') }}"></td>
             </tr>
-            
-        <form>
     </table>
     <input type="submit" value="Create" class="submit">
+</form>
 @endsection

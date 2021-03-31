@@ -5,29 +5,27 @@
 @section('content')
 
 <table class="tableb-sub" align="center" >
-<tr>
-    <td>
-
-<table class="" align="center">
-<tr>
-    <td>
-       <ul >
-        <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
-        <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
-       </ul>
-    </td>
-</tr>
-</table> 
-  
-    </td>
-</tr>
+    <tr>
+        <td>
+            <table align="center">
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
+                            <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
+                        </ul>
+                    </td>
+                </tr>
+            </table> 
+        </td>
+    </tr>
 </table>
     @error('input')
         <div class="alert">{{ $message }}</div>
     @enderror
-    <table align="center" style="margin-top: 20px;" class="table-create">
-        <form action="{{ route('manga-create')}}" method="post" enctype= "multipart/form-data" >
+    <form action="{{ route('manga-create')}}" method="post" enctype= "multipart/form-data" >
         @csrf
+        <table align="center" style="margin-top: 20px;" class="table-create">
             <tr>
                 <td>Image</td>
                 <td>:</td>
@@ -62,9 +60,8 @@
                 <td>Point </td>
                 <td>:</td>
                 <td><input type="text" name="point" class="input" value="{{ old('point') }}"></td>
-            </tr>
-            
-        <form>
-    </table>
-    <input type="submit" value="Create" class="submit" >
+            </tr>  
+        </table>
+        <input type="submit" value="Create" class="submit">
+    </form>
 @endsection
