@@ -17,10 +17,6 @@ class LoginController extends Controller
             'password' => $data['password'],
         ];
         if (Auth::attempt($credentials)) {
-            // regenerate session ID,regenarate session ID เพราะ อาจถูกโจมตี   
-                // redirect to the requested URL or
-                // to route product if does not specify
-                /* product = URL not route */
                 session()->regenerate();   
                 return redirect()->intended(route('homepage')); 
             }
