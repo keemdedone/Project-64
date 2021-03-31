@@ -20,30 +20,55 @@
         @auth
             <nav>
                 <ul>
-                    <li> <a class="userColor">{{ \Auth::user()->name }}</a></li>
+                    <li> 
+                         <a class="userColor">{{ \Auth::user()->name }}</a>
+                    </li>
                     <li>
-                        <a href="{{ route('logout') }}">Logout</a>
+                         <a href="{{ route('logout') }}">Logout</a>
                     </li>
                 </ul>
             </nav>
         @endauth
 
+
         <h1 >@yield('title')</h1>
         <table class="tableb" align="center" ><tr><td>
         <table class="table0" ><tr><td>
-<ul >
-        <li><a href="{{ route('homepage') }}" class="active3">Homepage</a> </li>
-        <li><a href="{{ route('game-list') }}" class="alias">Game-List</a> </li>
-        <li><a href="{{ route('manga-list') }}" class="alias">Manga-List</a> </li>
-        <li><a href="{{ route('recommand-list') }}" class="alias">Recommend-List</a> </li>
-</ul>
+  <ul >
+        <li> 
+             <a href="{{ route('homepage') }}" class="active3">Homepage</a> 
+        </li>
+
+        <li> 
+             <a href="{{ route('game-list') }}" class="alias">Game-List</a>  
+        </li>
+
+        <li> 
+             <a href="{{ route('manga-list') }}" class="alias">Manga-List</a> 
+        </li>
+
+        <li> 
+        <a href="{{ route('recommand-list') }}" class="alias">Recommend-List</a> 
+        </li>
+  </ul>  
+
     </header>
-    <main>@yield('content')</main>
-    </td></tr></table>   
-</td></tr></table>
+    
+       <main> 
+            @yield('content') 
+       </main>
+      </td>
+</tr>
+    </table>   
+     </td>
+ </tr>
+
+</table>
+
     <footer>
         <p class="copyright" > &#xA9; Copyright Project,2022 Komchan-Phominan Project. </p>
     </footer>
+
 </body>
 
 </html>

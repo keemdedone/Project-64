@@ -37,6 +37,6 @@
             
         <form>
     </table>
-    <input type="submit" value="Update" class="submit" >
+       <input type="submit" value="Update" class="submit" >
     </form>
 @endsection

@@ -16,25 +16,29 @@
         </td>
     </tr>
 </table>
-<form >  
-<table class="" align="center"  border="0" style="">
-    <tr>    
-        <td> 
-<ul> <li>       
-            <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Game</a>
-</li>
-</ul>
-        </td>
-    </tr>
-        @endcan   
-</table>
+
+ <form >  
+      <table class="" align="center"  border="0" style="">
+        <tr>    
+            <td> 
+  <ul> 
+      <li>       
+         <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Game</a>
+      </li>
+ </ul>
+            </td>
+        </tr>
+            @endcan 
+         
+      </table>
 </form>
+
 
     <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
   
 <table align="center" border="1" class="tablec2" >
     
-    <thead>
+         <thead>
                     <tr  class="text-center">
                         <th style="background-color: rgba(0, 0, 0, 0.226); ">TOP</th>
                         <th style="background-color: rgba(0, 0, 0, 0.226); ">Game name</th>
@@ -69,9 +73,9 @@
 <table class=""  align="center"  border="0" style="">
     <tr >
         <td> 
-<ul>  
-<li><a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Manga</a></li>
-</ul>
+           <ul>  
+              <li><a href="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Manga</a></li>
+           </ul>
         </td>
     </tr>    
         @endcan       

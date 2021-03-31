@@ -34,40 +34,46 @@
     </div>
   @endif
     
-    <div>
+  <div>
     <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>
-  <table  align="center"> 
+
+     <table  align="center"> 
    
-    
-      <tr class="bo">
+       <tr class="bo">
+
         <td ><strong>Id </strong></td>   <td>::</td>
-        <td >{{ $manga->id }}</td>
+        <td >{{ $manga->id }}</td> 
+
       </tr>
+
       <tr class="bo">
-        <td ><strong>Name</strong></td>  <td>::</td>
-        <td >{{ $manga->name }}</td>
+                     <td ><strong>Name</strong></td>  <td>::</td>
+                     <td >{{ $manga->name }}</td>
       </tr>
+
       <tr class="bo">
-        <td ><strong>Type </strong></td> <td>::</td>
-        <td >{{ $manga->type }}</td>
+                    <td ><strong>Type </strong></td> <td>::</td>
+                    <td >{{ $manga->type }}</td>
       </tr>
+
       <tr class="bo">
-        <td ><strong>Writer </strong></td> <td>::</td>
-        <td >{{ $manga->writer }}</td>
+                    <td ><strong>Writer </strong></td> <td>::</td>
+                    <td >{{ $manga->writer }}</td>
       </tr>
+
       <tr class="bo">
-        <td ><strong>Point </strong></td> <td>::</td>
-        <td >{{ $manga->point }}/10</td>
+                   <td ><strong>Point </strong></td> <td>::</td>
+                   <td >{{ $manga->point }}/10</td>
       </tr>
       
     
-  </table >
+    </table >
 
-  <table align="center" class="tabledes">
-  <tr>
-     <td>{{ $manga->description }}</td>
-  </tr>
-  </table>
+     <table align="center" class="tabledes">
+      <tr>
+         <td>{{ $manga->description }}</td>
+      </tr>
+     </table>
 </div> 
 
 

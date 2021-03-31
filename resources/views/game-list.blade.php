@@ -19,8 +19,8 @@
         </div>
     @endif  
     
-    <table border="0" align="center" class="table"> 
-        <tr>
+<table border="0" align="center" class="table"> 
+    <tr>
         @foreach ($games as $game)
             @if ( ($game->id)/4 == 1)
                 <tr></tr>
@@ -32,14 +32,16 @@
                     </a>
                 </td>
         @endforeach 
-        </tr>
-    </table>
+     </tr>
+</table>
+
     <table  align="center"> 
-    <tr>
-        <td>
-            <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
-        </td>
-    </tr>
-    </table>
+       <tr>
+           <td>
+               <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
+           </td>
+      </tr>
+</table>
+
 </body>
 @endsection

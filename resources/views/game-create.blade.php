@@ -5,29 +5,29 @@
 @section('content')
 
 <table class="tableb-sub" align="center" >
-<tr>
-    <td>
-
-<table class="" align="center">
-<tr>
-    <td>
-       <ul >
-        <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
-        <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
-       </ul>
-    </td>
-</tr>
-</table> 
-  
-    </td>
-</tr>
+   <tr>
+      <td>
+          <table class="" align="center">
+                <tr>
+                   <td>
+                      <ul>
+                          <li><a href="{{ route('game-create-form') }}" >Game</a> </li>
+                          <li><a href="{{ route('manga-create-form') }}">Manga</a> </li> 
+                      </ul>
+                    </td>
+                </tr>
+           </table> 
+        </td>
+    </tr>
 </table>
+
     @error('input')
         <div class="alert">{{ $message }}</div>
     @enderror
+
 <form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
     @csrf
-    <table align="center" style="margin-top: 20px;" class="table-create">
+        <table align="center" style="margin-top: 20px;" class="table-create">
             <tr>
                 <td>Image</td>
                 <td>:</td>
@@ -58,7 +58,7 @@
                 <td>:</td>
                 <td><input type="text" name="point" class="input" value="{{ old('point') }}"></td>
             </tr>
-    </table>
+      </table>
     <input type="submit" value="Create" class="submit">
 </form>
 @endsection

@@ -3,6 +3,7 @@
 @section('title',$title)
 
 @section('search')
+
 <body align="center">
     <form action="{{ route('recommand-list') }}" method="get" >
         <label class="alias">
@@ -21,9 +22,9 @@
 <tr>
     <td>
        <ul >
-        @can('update',\App\Models\Recommand::class)
+           @can('update',\App\Models\Recommand::class)
             <li><a href="{{ route('recommand-create-form') }}" class="alias">Create Recommend</a></li>
-        @endcan
+           @endcan
        </ul>
     </td>
 </tr>
@@ -34,11 +35,12 @@
 </table>
 
     @if(session()->has('status'))
-        <div class="status">
-            <span>{{ session()->get('status') }}</span>
-        </div>
-    @endif 
-<table border="0" align="center" class="table" style="margin-top: 50px;"> 
+          <div class="status">
+               <span>{{ session()->get('status') }}</span>
+          </div>
+      @endif 
+
+    <table border="0" align="center" class="table" style="margin-top: 50px;"> 
         <tr>
             @foreach ($recommands as $recommand)
                     <td class="glow-button">
@@ -50,12 +52,15 @@
             @endforeach 
         </tr>
     </table>
-<table  align="center"> 
-<tr>
-    <td>
-        <b action="{{ route('recommand-list') }}">{{ $recommands->withQueryString()->links() }}</b>
-    </td>
-</tr>
-</table>
-    <body>
+
+   <table  align="center"> 
+       <tr>
+          <td>
+              <b action="{{ route('recommand-list') }}">{{ $recommands->withQueryString()->links() }}</b>
+          </td>
+        </tr>
+   </table>
+
+<body>
+
 @endsection

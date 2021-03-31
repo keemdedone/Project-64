@@ -36,7 +36,7 @@ table{
                     <tr>
                         <td>
                             <b>
-                            <a href="{{ route('game-view', ['game' => $game->id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a>
+                               <a href="{{ route('game-view', ['game' => $game->id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a>
                             </b>
                         </td>
                         <td>{{ $game->name }}</td>
