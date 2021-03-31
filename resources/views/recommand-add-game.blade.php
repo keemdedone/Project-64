@@ -41,7 +41,9 @@ table{
                         </td>
                         <td>{{ $game->name }}</td>
                         <td>{{ $game->recommands_id }} </td>
-                        <td><button typee="submit" name="game" value="{{ $game->id }}">Add</button></td>  
+                        <td>
+                            <button typee="submit" name="game" value="{{ $game->id }}">Add</button>
+                        </td>  
                     </tr>
                 @endforeach
                 </tbody>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<table class="" align="center"  border="0" >
+<table align="center"  border="0" >
     @if ($check == "Game")
     <tr>
         <td>
@@ -18,14 +18,14 @@
 </table>
 
  <form >  
-      <table class="" align="center"  border="0" style="">
+      <table align="center"  border="0" style="">
         <tr>    
             <td> 
-  <ul> 
-      <li>       
-         <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Game</a>
-      </li>
- </ul>
+                <ul> 
+                    <li>       
+                        <a href="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}"  class="alias" style="color: rgb(255, 255, 255);background-color: #4CAF50;">Show Game</a>
+                    </li>
+                </ul>
             </td>
         </tr>
             @endcan 
@@ -58,7 +58,7 @@
 
     @else
 
-<table class="" align="center"  border="0">   
+<table align="center"  border="0">   
 <tr>
     <td>
         @can('update',\App\Models\Recommand::class)
@@ -70,7 +70,7 @@
 </tr>
 </table>
 
-<table class=""  align="center"  border="0" style="">
+<table  align="center"  border="0" style="">
     <tr >
         <td> 
            <ul>  

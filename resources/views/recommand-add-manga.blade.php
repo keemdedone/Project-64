@@ -36,12 +36,14 @@ table{
                     <tr>
                         <td>
                             <b>
-                            <a href="{{ route('manga-view', ['manga' => $manga->id]) }}" style="color: white; text-decoration: none;"> {{ $manga->id }} </a>
+                                <a href="{{ route('manga-view', ['manga' => $manga->id]) }}" style="color: white; text-decoration: none;"> {{ $manga->id }} </a>
                             </b>
                         </td>
                         <td>{{ $manga->name }}</td>
                         <td>{{ $manga->recommands_id }} </td>
-                        <td><button type="submit" name="manga" value="{{ $manga->id }}">Add</button></td>  
+                        <td>
+                            <button type="submit" name="manga" value="{{ $manga->id }}">Add</button>
+                        </td>  
                     </tr>
                 @endforeach
                 </tbody>

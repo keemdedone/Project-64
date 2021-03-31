@@ -23,21 +23,21 @@
                   </tr>
             </thead>
 
-               <tbody>
-                    @foreach($games as $game)
+            <tbody>
+                @foreach($games as $game)
                     <tr>
                         <td class="alias">
-                                         <b>
-                                            <a href="{{ route('game-view', ['game' => $game -> id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a>
-                                         </b>
-                         </td>
-                         <td>{{ $game->name }}</td>
-                         <td>
+                            <b><a href="{{ route('game-view', ['game' => $game -> id]) }}" style="color: white; text-decoration: none;"> {{ $game->id }} </a></b>
+                        </td>
+                        <td>
+                            {{ $game->name }}
+                        </td>
+                        <td>
                             <a href="{{ route('recommand-remove-game',['recommand' =>$recommand -> id,'game' => $game -> id,]) }}"  style="color: white;">Remove</a>
-                         </td>
+                        </td>
                     </tr>
-                            @endforeach
-                    </tbody>
-            </table>
-     </main>
+                @endforeach
+            </tbody>
+        </table>
+    </main>
 @endsection

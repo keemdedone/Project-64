@@ -21,23 +21,22 @@
                     <th style="background-color: rgba(0, 0, 0, 0.226); ">     </th>
                 </tr>
             </thead>
-                  <tbody>
+                <tbody>
                         @foreach($mangas as $manga)
                     <tr>
-                           <td>
-                              <b>
+                        <td>
+                            <b>
                                 <a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" style="color: white; text-decoration: none;"> {{ $manga->id }} </a>
-                              </b>
-                          </td>
-                          <td>{{ $manga->name }}</td>
-                          <td>
-                              <a type="submit" href="{{ route('recommand-remove-manga',['recommand' =>$recommand -> id,'manga' => $manga -> id,]) }}" style="color: white;">Remove</a>
-                          </td>
+                            </b>
+                        </td>
+                        <td>{{ $manga->name }}</td>
+                        <td>
+                            <a type="submit" href="{{ route('recommand-remove-manga',['recommand' =>$recommand -> id,'manga' => $manga -> id,]) }}" style="color: white;">Remove</a>
+                        </td>
                     </tr>
-
                         @endforeach
-                 </tbody>
-         </table>
+                </tbody>
+        </table>
     </main>
     
 @endsection
