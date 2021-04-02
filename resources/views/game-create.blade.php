@@ -7,7 +7,7 @@
 <table class="tableb-sub" align="center" >
    <tr>
       <td>
-          <table class="" align="center">
+          <table align="center">
                 <tr>
                    <td>
                       <ul>

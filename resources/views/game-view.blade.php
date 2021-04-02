@@ -26,7 +26,7 @@
           <span>{{ session()->get('status') }}</span>
       </div>
   @endif    
-        <img src="{{ asset("images/game/g{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 180px; margin-top: 20px;"/>
+        <img src="{{ asset("images/game/{$game['id']}.jpg") }}" alt="The image of {{ $game['name'] }}" style="width: 180px; margin-top: 20px;"/>
       
 <div>
   <table  align="center"> 

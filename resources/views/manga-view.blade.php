@@ -11,7 +11,7 @@
 <tr>
     <td>
 
-<table class="" align="center">
+<table align="center">
 <tr>
     <td>
     @can('update',\App\Models\Manga::class)
@@ -35,7 +35,7 @@
   @endif
     
   <div>
-    <img src="{{ asset("images/manga/m{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>
+    <img src="{{ asset("images/manga/{$manga['id']}.jpg") }}" alt="The image of {{ $manga['name'] }}" style="width: 180px; margin-top: 20px;" /><br/>
 
      <table  align="center"> 
    
