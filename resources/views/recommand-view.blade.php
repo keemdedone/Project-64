@@ -81,7 +81,7 @@
         @endcan       
 </table>
 
-        <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
+        <img src="{{ asset("images/recommand/{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 380px; margin-top: 20px;"/>
     
 
 <table align="center" border="1"  class="tablec2" style="margin-top: 20px; background-color: rgba(0, 0, 0, 0.226); ">
