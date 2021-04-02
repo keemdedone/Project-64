@@ -35,12 +35,12 @@
      </tr>
 </table>
 
-    <table  align="center"> 
-       <tr>
-           <td>
-               <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
-           </td>
-      </tr>
+<table  align="center"> 
+    <tr>
+        <td>
+            <b action="{{ route('game-list') }}" align="center">{{ $games->withQueryString()->links() }}</b>
+        </td>
+    </tr>
 </table>
 
 </body>

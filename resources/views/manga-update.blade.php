@@ -8,7 +8,7 @@
     @error('input')
         <div>{{ $message }}</div>
     @enderror
-    @csrf
+        @csrf
         <tr>
                 <td>Name </td>
                 <td>:</td>

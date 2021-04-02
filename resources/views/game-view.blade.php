@@ -52,11 +52,11 @@
 
   </table >
 
-         <table align="center" border="0" class="tabledes">
-              <tr>
-                  <td >{{ $game->description }}</td>
-              </tr>
-         </table>
+  <table align="center" border="0" class="tabledes">
+    <tr>
+      <td >{{ $game->description }}</td>
+    </tr>
+  </table>
 
 </div> 
 
