@@ -40,7 +40,7 @@
                     </table>
                     <table align="center" border="1" class="status-error" >
                         <tr>
-                            @error('email')
+                            @error('emailOrPass')
                                 <td><div>{{ $message }}</div></td>
                             @enderror      
                         </tr>

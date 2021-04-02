@@ -12,15 +12,15 @@ class LoginController extends Controller
 
     function authenticate(Request $request) {
         $data = $request->getParsedBody();
-        $credentials = [
+        $userLogin = [
             'email' => $data['email'],
             'password' => $data['password'],
         ];
-        if (Auth::attempt($credentials)) {
-                session()->regenerate();   
-                return redirect()->intended(route('homepage')); 
-            }
-        return back()->withErrors(['email' => 'Your email or Password wrong , Please try againg']);
+        if (Auth::attempt($userLogin)) {
+            session()->regenerate();   
+            return redirect()->intended(route('homepage')); 
+        }
+        return redirect()->route('login')->withErrors(['emailOrPass' => 'Your Email or Password wrong , Please try againg']);
     }
 
     function logout() {
