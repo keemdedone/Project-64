@@ -22,6 +22,7 @@ Route::get('/', [LoginController::class, 'loginForm'])->name('login');
 Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
+
 Route::get('/homepage/create', function () {
     return view('select-create-review');
 })->name('select-create-review');

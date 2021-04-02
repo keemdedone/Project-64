@@ -43,7 +43,7 @@
             @foreach ($recommands as $recommand)
                     <td class="glow-button">
                         <a href="{{ route('recommand-view', ['recommand' => $recommand->id]) }}" class="alias" style="color: rgb(255, 255, 255);">
-                            <img src="{{ asset("images/recommand/re{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
+                            <img src="{{ asset("images/recommand/{$recommand['id']}.jpg") }}" alt="The image of {{ $recommand['name'] }}" style="width: 250px;" /><br/>
                             <h3>{{$recommand->name}}</h3>
                         </a>
                     </td>
