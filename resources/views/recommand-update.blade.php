@@ -3,6 +3,9 @@
 @section('title',$title)
 
 @section('content')
+   @error('input')
+        <div>{{ $message }}</div>
+   @enderror
 <body>
    <form action="{{ route('recommand-update',['recommand' => $recommand->id ]) }}" method="post">
    @csrf

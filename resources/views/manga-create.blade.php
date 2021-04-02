@@ -21,7 +21,7 @@
     </tr>
 </table>
     @error('input')
-        <div class="alert">{{ $message }}</div>
+        <div>{{ $message }}</div>
     @enderror
     <form action="{{ route('manga-create')}}" method="post" enctype= "multipart/form-data" >
         @csrf

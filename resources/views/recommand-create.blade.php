@@ -6,7 +6,7 @@
 
 <body>
     @error('input')
-        <div class="alert">{{ $message }}</div>
+        <div>{{ $message }}</div>
     @enderror
     <form action="{{ route('recommand-create')}}" method="post" enctype= "multipart/form-data">
         @csrf

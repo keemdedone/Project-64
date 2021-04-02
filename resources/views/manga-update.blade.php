@@ -6,7 +6,7 @@
     <form action="{{ route('manga-update',['manga' => $manga->id ]) }}" method="post">
     <table align="center" style="margin-top: 20px;" class="table-create">
     @error('input')
-        <div class="alert">{{ $message }}</div>
+        <div>{{ $message }}</div>
     @enderror
     @csrf
         <tr>

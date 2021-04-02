@@ -5,7 +5,7 @@
 @section('content')
     <form action="{{ route('game-update',['game' => $game->id ]) }}" method="post">
     @error('input')
-        <div class="alert">{{ $message }}</div>
+        <div>{{ $message }}</div>
     @enderror
 
     <table align="center" style="margin-top: 20px;" class="table-create">
