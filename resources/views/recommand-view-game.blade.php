@@ -3,7 +3,15 @@
 @section('title',$title)
 
 @section('content')
-
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ route('recommand-view',['recommand' => $recommand->id]) }}"> Back </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <form action="{{ route('recommand-view-game',['recommand' => $recommand->id]) }}" method="get">
     <label>
        <h3 class="text-center"> Search : <input type="text" name="term" value="{{ $term }}" size="40"></h3>

@@ -48,7 +48,7 @@
             <tr>
                 <td class="alias">
                     <b>
-                        {{ $game->id }} 
+                        {{ $loop->index + 1 }} 
                     </b>
                 </td>
                 <td><a href="{{ route('game-view', ['game' => $game -> id]) }}" style="color: white; text-decoration: none;">{{ $game->name }}</a></td>    
@@ -96,7 +96,7 @@
             <tr>
                 <td class="alias">
                     <b>
-                        {{ $manga->id }} 
+                        {{ $loop->index + 1 }} 
                     </b>
                 </td>
                 <td><a href="{{ route('manga-view', ['manga' => $manga -> id]) }}" style="color: white; text-decoration: none;" >{{ $manga->name }}</a></td>    

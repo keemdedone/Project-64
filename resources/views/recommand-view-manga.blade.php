@@ -3,7 +3,15 @@
 @section('title',$title)
 
 @section('content')
-
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ route('recommand-view',['recommand' => $recommand->id]) }}"> Back </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <form action="{{ route('recommand-view-manga',['recommand' => $recommand->id]) }}" method="get">
     <label>
         <h3 class="text-center"> Search : <input type="text" name="term" value="{{ $term }}" size="40"></h3>
@@ -11,9 +19,8 @@
            <b class="text-center" >{{ $mangas->withQueryString()->links() }}<b>
            <b><a href ="{{ route('recommand-add-manga-form',['recommand' => $recommand->id]) }}"  class="submit2" >Add manga </a></b>
 </form><br /><br />
-
     <main>
-        <table align="center" border="1" class="tablec2">
+        <table align="center" border="1" class="tablec2">   
             <thead>
                 <tr class="tableco" align="center">
                     <th style="background-color: rgba(0, 0, 0, 0.226); ">ID   </th>
