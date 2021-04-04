@@ -21,9 +21,13 @@
     </tr>
 </table>
 
-    @error('input')
-        <div>{{ $message }}</div>
-    @enderror
+<table align="center" border="1" class="status-error" >
+                        <tr>
+                            @error('input')
+                                <td><div>{{ $message }}</div></td>
+                            @enderror      
+                        </tr>
+</table>
 
 <form action="{{ route('game-create')}}" method="post" enctype= "multipart/form-data" >
     @csrf
