@@ -14,7 +14,6 @@ class AddMangasGamesRecommandsToTable extends Migration
      */
     public function up()
     {
-        Schema::table('table', function (Blueprint $table) {
             DB::table('games')->insert(
                 array(
                     'id' => '1',
@@ -159,9 +158,6 @@ class AddMangasGamesRecommandsToTable extends Migration
                     รายชื่อการ์ตูนยอดนิยมประจำปี 2020 ถูกรวบรวมโดยการจัดอันดับรายชื่อจากชุมชนผู้วิจารณ์มังงะของเรา ตั้งแต่โชเน็นสยองขวัญกับปีศาจและคำสาปไปจนถึงความรักและความเพ้อฝันในยุโรปลองดูซีรีย์มังงะเรื่องใดที่ติดอันดับมังงะยอดนิยมปี 2020 ของเรา:',
                 )
             );
-
-           
-        });
     }
 
     /**
