@@ -40,7 +40,12 @@ table{
                             </b>
                         </td>
                         <td>{{ $manga->name }}</td>
-                        <td>{{ $manga->recommands_id }} </td>
+                        <td>
+                        @if (is_null($manga->recommands_id))
+                            This manga not in any recommends....
+                        @else 
+                            {{ $manga->recommands_id }}
+                        @endif</td>
                         <td>
                             <button type="submit" name="manga" value="{{ $manga->id }}">Add</button>
                         </td>  

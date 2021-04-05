@@ -40,7 +40,13 @@ table{
                             </b>
                         </td>
                         <td>{{ $game->name }}</td>
-                        <td>{{ $game->recommands_id }} </td>
+                        <td>
+                        @if (is_null($game->recommands_id))
+                            This game not in any recommends....
+                        @else 
+                            {{ $game->recommands_id }}
+                        @endif
+                        </td>
                         <td>
                             <button typee="submit" name="game" value="{{ $game->id }}">Add</button>
                         </td>  
