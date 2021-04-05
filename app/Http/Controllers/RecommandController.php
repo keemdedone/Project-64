@@ -183,6 +183,15 @@ class RecommandController extends Controller
         $manga->save();
         return back();
     }
+    /*
+    *
+    *
+    *
+    *
+    *
+    */ 
+
+    // recommand function sction
 
     function createForm() {
         $this->authorize('update',Recommand::class);
