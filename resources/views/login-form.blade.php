@@ -13,7 +13,7 @@
         <table align="center" border="0" bo class="table-login" style="margin-top: 150px;">
             <tr>
                 <td>
-                    <h1 align="center">Longin</h1>
+                    <h1 align="center">Login</h1>
                     <table align="center" border="0"  style="width: 500px;">
                         @csrf
                         <tr>
